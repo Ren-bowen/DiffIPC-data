@@ -1,0 +1,120 @@
+{
+  "states": [
+    {
+      "path": "run-shape.json"
+    }
+  ],
+  "parameters": [
+    {
+      "number": {
+        "surface_selection": [
+          1
+        ],
+        "state": 0
+      },
+      "initial": []
+    }
+  ],
+  "variable_to_simulation": [
+    {
+      "type": "shape",
+      "state": 0,
+      "composition": [],
+      "composite_map_type": "boundary",
+      "surface_selection": [
+        1
+      ],
+      "active_dimensions": []
+    }
+  ],
+  "functionals": [
+    {
+      "type": "power",
+      "power": 0.125,
+      "weight": 1e-05,
+      "print_energy": "stress",
+      "objective": {
+        "type": "transient_integral",
+        "state": 0,
+        "integral_type": "uniform",
+        "steps": [],
+        "static_objective": {
+          "type": "stress_norm",
+          "state": 0,
+          "power": 8
+        }
+      }
+    },
+    {
+      "type": "soft_constraint",
+      "weight": 10000.0,
+      "soft_bound": [
+        0.0631528717706228,
+        100
+      ],
+      "print_energy": "volume",
+      "objective": {
+        "type": "volume",
+        "state": 0,
+        "volume_selection": [
+          1
+        ]
+      }
+    },
+    {
+      "type": "boundary_smoothing",
+      "state": 0,
+      "scale_invariant": false,
+      "power": 2,
+      "weight": 0.5,
+      "surface_selection": [
+        1
+      ],
+      "dimensions": [
+        0,
+        1,
+        2
+      ],
+      "print_energy": "boundary_smoothing"
+    }
+  ],
+  "stopping_conditions": [
+    {
+      "type": "plus-const",
+      "objective": {
+        "type": "min_jacobian",
+        "weight": 1,
+        "state": 0,
+        "print_energy": "Minus-Jacobian"
+      },
+      "value": -1e-07
+    }
+  ],
+  "solver": {
+    "max_threads": 16,
+    "nonlinear": {
+      "solver": "L-BFGS",
+      "line_search": {
+        "method": "Backtracking",
+        "min_step_size": 0.0001,
+        "use_grad_norm_tol": 0,
+        "default_init_step_size": 0.5
+      },
+      "max_iterations": 20,
+      "grad_norm_tol": 0.0001,
+      "advanced": {
+        "apply_gradient_fd": "None",
+        "gradient_fd_eps": 0.0001
+      }
+    },
+    "advanced": {
+      "enable_slim": false
+    }
+  },
+  "output": {
+    "log": {
+      "level": "trace"
+    },
+    "directory": "./run1_opt"
+  }
+}

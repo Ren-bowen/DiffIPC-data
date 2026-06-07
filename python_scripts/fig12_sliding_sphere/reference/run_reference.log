@@ -1,0 +1,676 @@
+
+=== chunk 1/10: run 20 iter(s) (cumulative=20) ===
+   pre-iter ‖∇f‖ per term: total=1.583  stress=1.581  volume=0  boundary_smoothing=0.07678
+Warning: Appending zeros to replace the missing physical tag data.
+Warning: Appending zeros to replace the missing geometrical tag data.
+[2026-06-06 16:39:20.106] [wmtk] [info] Loaded v: 207 t: 683
+[2026-06-06 16:39:20.108] [wmtk] [info] Input Avg Length 0.09708919896874046
+[2026-06-06 16:39:20.108] [wmtk] [info] Energy: max = 10.166513604567372 avg = 4.0033763538771465
+[2026-06-06 16:39:20.108] [wmtk] [info] Energy: max = 10.166513604567372 avg = 4.0033763538771465
+[2026-06-06 16:39:20.108] [wmtk] [info] Energy: max = 10.166513604567372 avg = 4.0033763538771465
+[2026-06-06 16:39:20.108] [wmtk] [info] Energy: max = 10.166513604567372 avg = 4.0033763538771465
+[2026-06-06 16:39:20.108] [wmtk] [info] ==smoothing 0==
+[2026-06-06 16:39:20.108] [wmtk] [info] vertex smoothing prepare time: 7e-06s
+[2026-06-06 16:39:20.109] [wmtk] [info] executed: 207 | success / fail: 45 / 162
+[2026-06-06 16:39:20.110] [wmtk] [info] vertex smoothing operation time serial: 0.001459s
+[2026-06-06 16:39:20.110] [wmtk] [info] Energy: max = 8.29017951670659 avg = 3.853642611984414
+[2026-06-06 16:39:20.110] [wmtk] [info] Energy: max = 8.29017951670659 avg = 3.853642611984414
+[2026-06-06 16:39:20.110] [wmtk] [info] time = 0.001506
+[2026-06-06 16:39:20.110] [wmtk] [info] 
+========it 0========
+[2026-06-06 16:39:20.110] [wmtk] [info] Energy: max = 8.29017951670659 avg = 3.853642611984414
+[2026-06-06 16:39:20.110] [wmtk] [info] ==splitting 0==
+[2026-06-06 16:39:20.110] [wmtk] [info] edge split prepare time: 0.000298s
+[2026-06-06 16:39:20.112] [wmtk] [info] executed: 126 | success / fail: 65 / 61
+[2026-06-06 16:39:20.112] [wmtk] [info] edge split operation time: 0.002483s
+[2026-06-06 16:39:20.112] [wmtk] [info] Energy: max = 8.29017951670659 avg = 3.98754853054145
+[2026-06-06 16:39:20.112] [wmtk] [info] ==collapsing 0==
+[2026-06-06 16:39:20.113] [wmtk] [info] edge collapse prepare time: 0.000423s
+[2026-06-06 16:39:20.113] [wmtk] [info] Prepare to collapse 2826
+[2026-06-06 16:39:20.128] [wmtk] [info] executed: 1211 | success / fail: 2 / 1209
+[2026-06-06 16:39:20.128] [wmtk] [info] Collapsed 2, retrying failed 1209
+[2026-06-06 16:39:20.128] [wmtk] [info] Prepare to collapse 1209
+[2026-06-06 16:39:20.142] [wmtk] [info] executed: 1200 | success / fail: 0 / 1200
+[2026-06-06 16:39:20.142] [wmtk] [info] Collapsed 0, retrying failed 1200
+[2026-06-06 16:39:20.142] [wmtk] [info] edge collapse operation time serial: 0.029197999999999998s
+[2026-06-06 16:39:20.142] [wmtk] [info] Energy: max = 8.29017951670659 avg = 3.986589170601524
+[2026-06-06 16:39:20.142] [wmtk] [info] ==swapping 0==
+[2026-06-06 16:39:20.143] [wmtk] [info] edge swap 44 prepare time: 0.000335s
+[2026-06-06 16:39:20.147] [wmtk] [info] executed: 1642 | success / fail: 27 / 1615
+[2026-06-06 16:39:20.147] [wmtk] [info] edge swap 44 operation time serial: 0.004875s
+[2026-06-06 16:39:20.148] [wmtk] [info] edge swap prepare time: 0.000314s
+[2026-06-06 16:39:20.149] [wmtk] [info] executed: 1454 | success / fail: 10 / 1444
+[2026-06-06 16:39:20.149] [wmtk] [info] edge swap operation time serial: 0.0015049999999999998s
+[2026-06-06 16:39:20.150] [wmtk] [info] face swap prepare time: 0.000306s
+[2026-06-06 16:39:20.153] [wmtk] [info] executed: 1436 | success / fail: 6 / 1430
+[2026-06-06 16:39:20.153] [wmtk] [info] face swap operation time serial: 0.003283s
+[2026-06-06 16:39:20.153] [wmtk] [info] Energy: max = 8.29017951670659 avg = 3.9188530609777508
+[2026-06-06 16:39:20.153] [wmtk] [info] ==smoothing 0==
+[2026-06-06 16:39:20.153] [wmtk] [info] vertex smoothing prepare time: 9e-06s
+[2026-06-06 16:39:20.155] [wmtk] [info] executed: 270 | success / fail: 67 / 203
+[2026-06-06 16:39:20.155] [wmtk] [info] vertex smoothing operation time serial: 0.001942s
+[2026-06-06 16:39:20.155] [wmtk] [info] Energy: max = 7.781880311989097 avg = 3.8477133266888415
+[2026-06-06 16:39:20.155] [wmtk] [info] Energy: max = 7.781880311989097 avg = 3.8477133266888415
+[2026-06-06 16:39:20.155] [wmtk] [info] time = 0.002008
+[2026-06-06 16:39:20.155] [wmtk] [info] max energy 7.781880311989097 stop 10
+[2026-06-06 16:39:20.155] [wmtk] [info] vert 270 tet 965
+
+
+
+  chunk       maxσ        L8σ      stress     volume     smooth      ‖∇str‖     ‖∇vol‖     ‖∇smt‖     sjT    sjS    sjT*   sjS*  try     step rem
+      1  1.333e+04  6.401e+03   6.027e-02          0  2.591e-02   1.581e+00          0  7.678e-02  1.106e-01 5.413e-01  1.601e-01 5.413e-01    4 1.562e-02   Y
+   polyfem SIGABRT (likely benign max-iters throw); continuing.
+
+=== chunk 2/10: run 20 iter(s) (cumulative=40) ===
+   pre-iter ‖∇f‖ per term: total=0.3658  stress=0.3161  volume=0  boundary_smoothing=0.1905
+Warning: Appending zeros to replace the missing physical tag data.
+Warning: Appending zeros to replace the missing geometrical tag data.
+[2026-06-06 16:51:33.085] [wmtk] [info] Loaded v: 270 t: 965
+[2026-06-06 16:51:33.086] [wmtk] [info] Input Avg Length 0.0863616681018125
+[2026-06-06 16:51:33.086] [wmtk] [info] Energy: max = 56.708535090569946 avg = 4.013853826788886
+[2026-06-06 16:51:33.086] [wmtk] [info] Energy: max = 56.708535090569946 avg = 4.013853826788886
+[2026-06-06 16:51:33.086] [wmtk] [info] Energy: max = 56.708535090569946 avg = 4.013853826788886
+[2026-06-06 16:51:33.086] [wmtk] [info] Energy: max = 56.708535090569946 avg = 4.013853826788886
+[2026-06-06 16:51:33.086] [wmtk] [info] ==smoothing 0==
+[2026-06-06 16:51:33.086] [wmtk] [info] vertex smoothing prepare time: 1.1e-05s
+[2026-06-06 16:51:33.089] [wmtk] [info] executed: 270 | success / fail: 104 / 166
+[2026-06-06 16:51:33.089] [wmtk] [info] vertex smoothing operation time serial: 0.002247s
+[2026-06-06 16:51:33.089] [wmtk] [info] Energy: max = 16.816633976610873 avg = 3.8947829241536245
+[2026-06-06 16:51:33.089] [wmtk] [info] Energy: max = 16.816633976610873 avg = 3.8947829241536245
+[2026-06-06 16:51:33.089] [wmtk] [info] time = 0.002327
+[2026-06-06 16:51:33.089] [wmtk] [info] 
+========it 0========
+[2026-06-06 16:51:33.089] [wmtk] [info] Energy: max = 16.816633976610873 avg = 3.8947829241536245
+[2026-06-06 16:51:33.089] [wmtk] [info] ==splitting 0==
+[2026-06-06 16:51:33.089] [wmtk] [info] edge split prepare time: 0.00042199999999999996s
+[2026-06-06 16:51:33.093] [wmtk] [info] executed: 208 | success / fail: 102 / 106
+[2026-06-06 16:51:33.093] [wmtk] [info] edge split operation time: 0.003568s
+[2026-06-06 16:51:33.093] [wmtk] [info] Energy: max = 15.8333282498844 avg = 4.040567954400598
+[2026-06-06 16:51:33.093] [wmtk] [info] ==collapsing 0==
+[2026-06-06 16:51:33.093] [wmtk] [info] edge collapse prepare time: 0.0006399999999999999s
+[2026-06-06 16:51:33.093] [wmtk] [info] Prepare to collapse 4040
+[2026-06-06 16:51:33.118] [wmtk] [info] executed: 1538 | success / fail: 0 / 1538
+[2026-06-06 16:51:33.118] [wmtk] [info] Collapsed 0, retrying failed 1538
+[2026-06-06 16:51:33.118] [wmtk] [info] edge collapse operation time serial: 0.024446s
+[2026-06-06 16:51:33.118] [wmtk] [info] Energy: max = 15.8333282498844 avg = 4.040567954400598
+[2026-06-06 16:51:33.118] [wmtk] [info] ==swapping 0==
+[2026-06-06 16:51:33.118] [wmtk] [info] edge swap 44 prepare time: 0.000504s
+[2026-06-06 16:51:33.126] [wmtk] [info] executed: 2395 | success / fail: 44 / 2351
+[2026-06-06 16:51:33.126] [wmtk] [info] edge swap 44 operation time serial: 0.007496999999999999s
+[2026-06-06 16:51:33.126] [wmtk] [info] edge swap prepare time: 0.0004969999999999999s
+[2026-06-06 16:51:33.128] [wmtk] [info] executed: 2020 | success / fail: 0 / 2020
+[2026-06-06 16:51:33.128] [wmtk] [info] edge swap operation time serial: 0.0017439999999999999s
+[2026-06-06 16:51:33.129] [wmtk] [info] face swap prepare time: 0.00048199999999999995s
+[2026-06-06 16:51:33.134] [wmtk] [info] executed: 2067 | success / fail: 6 / 2061
+[2026-06-06 16:51:33.134] [wmtk] [info] face swap operation time serial: 0.004913s
+[2026-06-06 16:51:33.134] [wmtk] [info] Energy: max = 15.817228748039083 avg = 3.993901954674105
+[2026-06-06 16:51:33.134] [wmtk] [info] ==smoothing 0==
+[2026-06-06 16:51:33.134] [wmtk] [info] vertex smoothing prepare time: 1.1e-05s
+[2026-06-06 16:51:33.136] [wmtk] [info] executed: 372 | success / fail: 110 / 262
+[2026-06-06 16:51:33.136] [wmtk] [info] vertex smoothing operation time serial: 0.002719s
+[2026-06-06 16:51:33.137] [wmtk] [info] Energy: max = 15.925099178564517 avg = 3.945877114768309
+[2026-06-06 16:51:33.137] [wmtk] [info] Energy: max = 15.925099178564517 avg = 3.945877114768309
+[2026-06-06 16:51:33.137] [wmtk] [info] time = 0.002815
+[2026-06-06 16:51:33.137] [wmtk] [info] max energy 15.925099178564517 stop 10
+[2026-06-06 16:51:33.137] [wmtk] [info] vert 372 tet 1478
+[2026-06-06 16:51:33.137] [wmtk] [info] 
+========it 1========
+[2026-06-06 16:51:33.137] [wmtk] [info] Energy: max = 15.925099178564517 avg = 3.945877114768309
+[2026-06-06 16:51:33.137] [wmtk] [info] ==splitting 0==
+[2026-06-06 16:51:33.137] [wmtk] [info] edge split prepare time: 0.000517s
+[2026-06-06 16:51:33.139] [wmtk] [info] executed: 61 | success / fail: 26 / 35
+[2026-06-06 16:51:33.139] [wmtk] [info] edge split operation time: 0.001371s
+[2026-06-06 16:51:33.139] [wmtk] [info] Energy: max = 15.925099178564517 avg = 3.964138148474899
+[2026-06-06 16:51:33.139] [wmtk] [info] ==collapsing 0==
+[2026-06-06 16:51:33.139] [wmtk] [info] edge collapse prepare time: 0.000574s
+[2026-06-06 16:51:33.139] [wmtk] [info] Prepare to collapse 4400
+[2026-06-06 16:51:33.167] [wmtk] [info] executed: 1784 | success / fail: 0 / 1784
+[2026-06-06 16:51:33.167] [wmtk] [info] Collapsed 0, retrying failed 1784
+[2026-06-06 16:51:33.167] [wmtk] [info] edge collapse operation time serial: 0.028124999999999997s
+[2026-06-06 16:51:33.167] [wmtk] [info] Energy: max = 15.925099178564517 avg = 3.964138148474899
+[2026-06-06 16:51:33.167] [wmtk] [info] ==swapping 0==
+[2026-06-06 16:51:33.168] [wmtk] [info] edge swap 44 prepare time: 0.000581s
+[2026-06-06 16:51:33.176] [wmtk] [info] executed: 2460 | success / fail: 31 / 2429
+[2026-06-06 16:51:33.176] [wmtk] [info] edge swap 44 operation time serial: 0.007716s
+[2026-06-06 16:51:33.176] [wmtk] [info] edge swap prepare time: 0.000551s
+[2026-06-06 16:51:33.178] [wmtk] [info] executed: 2262 | success / fail: 8 / 2254
+[2026-06-06 16:51:33.178] [wmtk] [info] edge swap operation time serial: 0.002082s
+[2026-06-06 16:51:33.179] [wmtk] [info] face swap prepare time: 0.000567s
+[2026-06-06 16:51:33.184] [wmtk] [info] executed: 2202 | success / fail: 2 / 2200
+[2026-06-06 16:51:33.184] [wmtk] [info] face swap operation time serial: 0.005196s
+[2026-06-06 16:51:33.184] [wmtk] [info] Energy: max = 11.571463772506299 avg = 3.9179822833377917
+[2026-06-06 16:51:33.184] [wmtk] [info] ==smoothing 0==
+[2026-06-06 16:51:33.184] [wmtk] [info] vertex smoothing prepare time: 9.999999999999999e-06s
+[2026-06-06 16:51:33.187] [wmtk] [info] executed: 398 | success / fail: 110 / 288
+[2026-06-06 16:51:33.187] [wmtk] [info] vertex smoothing operation time serial: 0.0026839999999999998s
+[2026-06-06 16:51:33.187] [wmtk] [info] Energy: max = 10.321066516741148 avg = 3.898343676757129
+[2026-06-06 16:51:33.187] [wmtk] [info] Energy: max = 10.321066516741148 avg = 3.898343676757129
+[2026-06-06 16:51:33.187] [wmtk] [info] time = 0.0027719999999999997
+[2026-06-06 16:51:33.187] [wmtk] [info] max energy 10.321066516741148 stop 10
+[2026-06-06 16:51:33.187] [wmtk] [info] vert 398 tet 1618
+[2026-06-06 16:51:33.187] [wmtk] [info] 
+========it 2========
+[2026-06-06 16:51:33.187] [wmtk] [info] Energy: max = 10.321066516741148 avg = 3.898343676757129
+[2026-06-06 16:51:33.187] [wmtk] [info] ==splitting 0==
+[2026-06-06 16:51:33.188] [wmtk] [info] edge split prepare time: 0.000534s
+[2026-06-06 16:51:33.188] [wmtk] [info] executed: 23 | success / fail: 4 / 19
+[2026-06-06 16:51:33.188] [wmtk] [info] edge split operation time: 0.000651s
+[2026-06-06 16:51:33.188] [wmtk] [info] Energy: max = 10.321066516741148 avg = 3.901996376755384
+[2026-06-06 16:51:33.188] [wmtk] [info] ==collapsing 0==
+[2026-06-06 16:51:33.189] [wmtk] [info] edge collapse prepare time: 0.000562s
+[2026-06-06 16:51:33.189] [wmtk] [info] Prepare to collapse 4432
+[2026-06-06 16:51:33.219] [wmtk] [info] executed: 1854 | success / fail: 0 / 1854
+[2026-06-06 16:51:33.219] [wmtk] [info] Collapsed 0, retrying failed 1854
+[2026-06-06 16:51:33.219] [wmtk] [info] edge collapse operation time serial: 0.030178999999999997s
+[2026-06-06 16:51:33.219] [wmtk] [info] Energy: max = 10.321066516741148 avg = 3.901996376755384
+[2026-06-06 16:51:33.219] [wmtk] [info] ==swapping 0==
+[2026-06-06 16:51:33.220] [wmtk] [info] edge swap 44 prepare time: 0.000556s
+[2026-06-06 16:51:33.227] [wmtk] [info] executed: 2364 | success / fail: 16 / 2348
+[2026-06-06 16:51:33.227] [wmtk] [info] edge swap 44 operation time serial: 0.007456s
+[2026-06-06 16:51:33.228] [wmtk] [info] edge swap prepare time: 0.000554s
+[2026-06-06 16:51:33.230] [wmtk] [info] executed: 2216 | success / fail: 0 / 2216
+[2026-06-06 16:51:33.230] [wmtk] [info] edge swap operation time serial: 0.0018939999999999999s
+[2026-06-06 16:51:33.230] [wmtk] [info] face swap prepare time: 0.00054s
+[2026-06-06 16:51:33.236] [wmtk] [info] executed: 2231 | success / fail: 2 / 2229
+[2026-06-06 16:51:33.236] [wmtk] [info] face swap operation time serial: 0.005418999999999999s
+[2026-06-06 16:51:33.236] [wmtk] [info] Energy: max = 8.411455573265146 avg = 3.878937430574038
+[2026-06-06 16:51:33.236] [wmtk] [info] ==smoothing 0==
+[2026-06-06 16:51:33.236] [wmtk] [info] vertex smoothing prepare time: 1.1e-05s
+[2026-06-06 16:51:33.238] [wmtk] [info] executed: 402 | success / fail: 110 / 292
+[2026-06-06 16:51:33.238] [wmtk] [info] vertex smoothing operation time serial: 0.0025169999999999997s
+[2026-06-06 16:51:33.238] [wmtk] [info] Energy: max = 8.411455573265146 avg = 3.870734982787487
+[2026-06-06 16:51:33.238] [wmtk] [info] Energy: max = 8.411455573265146 avg = 3.870734982787487
+[2026-06-06 16:51:33.238] [wmtk] [info] time = 0.002623
+[2026-06-06 16:51:33.238] [wmtk] [info] max energy 8.411455573265146 stop 10
+[2026-06-06 16:51:33.238] [wmtk] [info] vert 402 tet 1638
+
+
+
+      2  2.112e+04  7.763e+03   5.102e-02          0  1.989e-02   3.161e-01          0  1.905e-01  9.342e-03 3.279e-01  9.986e-02 3.279e-01    2 3.125e-02   Y
+   polyfem SIGABRT (likely benign max-iters throw); continuing.
+
+=== chunk 3/10: run 20 iter(s) (cumulative=60) ===
+   pre-iter ‖∇f‖ per term: total=1.278  stress=1.269  volume=0  boundary_smoothing=0.1249
+Warning: Appending zeros to replace the missing physical tag data.
+Warning: Appending zeros to replace the missing geometrical tag data.
+[2026-06-06 17:09:07.569] [wmtk] [info] Loaded v: 402 t: 1638
+[2026-06-06 17:09:07.572] [wmtk] [info] Input Avg Length 0.07386836732898308
+[2026-06-06 17:09:07.572] [wmtk] [info] Energy: max = 8.06520416653449 avg = 3.8744326815717423
+[2026-06-06 17:09:07.572] [wmtk] [info] Energy: max = 8.06520416653449 avg = 3.8744326815717423
+[2026-06-06 17:09:07.572] [wmtk] [info] Energy: max = 8.06520416653449 avg = 3.8744326815717423
+[2026-06-06 17:09:07.572] [wmtk] [info] Energy: max = 8.06520416653449 avg = 3.8744326815717423
+[2026-06-06 17:09:07.572] [wmtk] [info] ==smoothing 0==
+[2026-06-06 17:09:07.572] [wmtk] [info] vertex smoothing prepare time: 1.2e-05s
+[2026-06-06 17:09:07.576] [wmtk] [info] executed: 402 | success / fail: 221 / 181
+[2026-06-06 17:09:07.576] [wmtk] [info] vertex smoothing operation time serial: 0.0041849999999999995s
+[2026-06-06 17:09:07.576] [wmtk] [info] Energy: max = 6.299426054591333 avg = 3.780139922978703
+[2026-06-06 17:09:07.576] [wmtk] [info] Energy: max = 6.299426054591333 avg = 3.780139922978703
+[2026-06-06 17:09:07.576] [wmtk] [info] time = 0.004301999999999999
+[2026-06-06 17:09:07.576] [wmtk] [info] 
+========it 0========
+[2026-06-06 17:09:07.576] [wmtk] [info] Energy: max = 6.299426054591333 avg = 3.780139922978703
+[2026-06-06 17:09:07.576] [wmtk] [info] ==splitting 0==
+[2026-06-06 17:09:07.577] [wmtk] [info] edge split prepare time: 0.000709s
+[2026-06-06 17:09:07.581] [wmtk] [info] executed: 271 | success / fail: 80 / 191
+[2026-06-06 17:09:07.581] [wmtk] [info] edge split operation time: 0.003825s
+[2026-06-06 17:09:07.581] [wmtk] [info] Energy: max = 6.299426054591333 avg = 3.8318391386770907
+[2026-06-06 17:09:07.581] [wmtk] [info] ==collapsing 0==
+[2026-06-06 17:09:07.582] [wmtk] [info] edge collapse prepare time: 0.000877s
+[2026-06-06 17:09:07.582] [wmtk] [info] Prepare to collapse 5388
+[2026-06-06 17:09:07.624] [wmtk] [info] executed: 1726 | success / fail: 2 / 1724
+[2026-06-06 17:09:07.624] [wmtk] [info] Collapsed 2, retrying failed 1724
+[2026-06-06 17:09:07.624] [wmtk] [info] Prepare to collapse 1724
+[2026-06-06 17:09:07.664] [wmtk] [info] executed: 1722 | success / fail: 0 / 1722
+[2026-06-06 17:09:07.664] [wmtk] [info] Collapsed 0, retrying failed 1722
+[2026-06-06 17:09:07.664] [wmtk] [info] edge collapse operation time serial: 0.081993s
+[2026-06-06 17:09:07.664] [wmtk] [info] Energy: max = 5.924715581912802 avg = 3.8260834297487594
+[2026-06-06 17:09:07.664] [wmtk] [info] ==swapping 0==
+[2026-06-06 17:09:07.665] [wmtk] [info] edge swap 44 prepare time: 0.0007559999999999999s
+[2026-06-06 17:09:07.675] [wmtk] [info] executed: 2861 | success / fail: 21 / 2840
+[2026-06-06 17:09:07.675] [wmtk] [info] edge swap 44 operation time serial: 0.010048999999999999s
+[2026-06-06 17:09:07.676] [wmtk] [info] edge swap prepare time: 0.000676s
+[2026-06-06 17:09:07.678] [wmtk] [info] executed: 2708 | success / fail: 4 / 2704
+[2026-06-06 17:09:07.678] [wmtk] [info] edge swap operation time serial: 0.002342s
+[2026-06-06 17:09:07.679] [wmtk] [info] face swap prepare time: 0.000674s
+[2026-06-06 17:09:07.685] [wmtk] [info] executed: 2708 | success / fail: 5 / 2703
+[2026-06-06 17:09:07.685] [wmtk] [info] face swap operation time serial: 0.006405s
+[2026-06-06 17:09:07.685] [wmtk] [info] Energy: max = 5.924715581912802 avg = 3.807180205862461
+[2026-06-06 17:09:07.685] [wmtk] [info] ==smoothing 0==
+[2026-06-06 17:09:07.685] [wmtk] [info] vertex smoothing prepare time: 2.2e-05s
+[2026-06-06 17:09:07.690] [wmtk] [info] executed: 480 | success / fail: 221 / 259
+[2026-06-06 17:09:07.690] [wmtk] [info] vertex smoothing operation time serial: 0.004624s
+[2026-06-06 17:09:07.690] [wmtk] [info] Energy: max = 5.721882298036287 avg = 3.772983884590422
+[2026-06-06 17:09:07.690] [wmtk] [info] Energy: max = 5.721882298036287 avg = 3.772983884590422
+[2026-06-06 17:09:07.690] [wmtk] [info] time = 0.004765999999999999
+[2026-06-06 17:09:07.690] [wmtk] [info] max energy 5.721882298036287 stop 10
+[2026-06-06 17:09:07.690] [wmtk] [info] vert 480 tet 2009
+
+
+
+      3  1.061e+04  4.292e+03   4.647e-02          0  1.774e-02   1.269e+00          0  1.249e-01  1.033e-01 5.066e-01  2.410e-01 4.833e-01    7 1.953e-03   Y
+   polyfem SIGABRT (likely benign max-iters throw); continuing.
+
+=== chunk 4/10: run 20 iter(s) (cumulative=80) ===
+   pre-iter ‖∇f‖ per term: total=0.1335  stress=0.1271  volume=0  boundary_smoothing=0.124
+Warning: Appending zeros to replace the missing physical tag data.
+Warning: Appending zeros to replace the missing geometrical tag data.
+[2026-06-06 17:26:26.422] [wmtk] [info] Loaded v: 480 t: 2009
+[2026-06-06 17:26:26.426] [wmtk] [info] Input Avg Length 0.06913313608859387
+[2026-06-06 17:26:26.426] [wmtk] [info] Energy: max = 6.920145846383806 avg = 3.835683468026306
+[2026-06-06 17:26:26.426] [wmtk] [info] Energy: max = 6.920145846383806 avg = 3.835683468026306
+[2026-06-06 17:26:26.426] [wmtk] [info] Energy: max = 6.920145846383806 avg = 3.835683468026306
+[2026-06-06 17:26:26.426] [wmtk] [info] Energy: max = 6.920145846383806 avg = 3.835683468026306
+[2026-06-06 17:26:26.426] [wmtk] [info] ==smoothing 0==
+[2026-06-06 17:26:26.426] [wmtk] [info] vertex smoothing prepare time: 1.2e-05s
+[2026-06-06 17:26:26.431] [wmtk] [info] executed: 480 | success / fail: 283 / 197
+[2026-06-06 17:26:26.431] [wmtk] [info] vertex smoothing operation time serial: 0.005202s
+[2026-06-06 17:26:26.431] [wmtk] [info] Energy: max = 6.192103492281603 avg = 3.800221187587641
+[2026-06-06 17:26:26.431] [wmtk] [info] Energy: max = 6.192103492281603 avg = 3.800221187587641
+[2026-06-06 17:26:26.431] [wmtk] [info] time = 0.005340999999999999
+[2026-06-06 17:26:26.431] [wmtk] [info] 
+========it 0========
+[2026-06-06 17:26:26.431] [wmtk] [info] Energy: max = 6.192103492281603 avg = 3.800221187587641
+[2026-06-06 17:26:26.432] [wmtk] [info] ==splitting 0==
+[2026-06-06 17:26:26.432] [wmtk] [info] edge split prepare time: 0.000857s
+[2026-06-06 17:26:26.437] [wmtk] [info] executed: 370 | success / fail: 95 / 275
+[2026-06-06 17:26:26.437] [wmtk] [info] edge split operation time: 0.004873s
+[2026-06-06 17:26:26.437] [wmtk] [info] Energy: max = 6.192103492281603 avg = 3.8697758037537384
+[2026-06-06 17:26:26.437] [wmtk] [info] ==collapsing 0==
+[2026-06-06 17:26:26.438] [wmtk] [info] edge collapse prepare time: 0.001045s
+[2026-06-06 17:26:26.438] [wmtk] [info] Prepare to collapse 6458
+[2026-06-06 17:26:26.493] [wmtk] [info] executed: 2085 | success / fail: 1 / 2084
+[2026-06-06 17:26:26.493] [wmtk] [info] Collapsed 1, retrying failed 2084
+[2026-06-06 17:26:26.493] [wmtk] [info] Prepare to collapse 2084
+[2026-06-06 17:26:26.545] [wmtk] [info] executed: 2078 | success / fail: 0 / 2078
+[2026-06-06 17:26:26.545] [wmtk] [info] Collapsed 0, retrying failed 2078
+[2026-06-06 17:26:26.545] [wmtk] [info] edge collapse operation time serial: 0.10620399999999999s
+[2026-06-06 17:26:26.545] [wmtk] [info] Energy: max = 6.1090823410066655 avg = 3.8698338284329874
+[2026-06-06 17:26:26.545] [wmtk] [info] ==swapping 0==
+[2026-06-06 17:26:26.546] [wmtk] [info] edge swap 44 prepare time: 0.0008629999999999999s
+[2026-06-06 17:26:26.558] [wmtk] [info] executed: 3648 | success / fail: 47 / 3601
+[2026-06-06 17:26:26.558] [wmtk] [info] edge swap 44 operation time serial: 0.012523s
+[2026-06-06 17:26:26.559] [wmtk] [info] edge swap prepare time: 0.0008489999999999999s
+[2026-06-06 17:26:26.562] [wmtk] [info] executed: 3251 | success / fail: 4 / 3247
+[2026-06-06 17:26:26.562] [wmtk] [info] edge swap operation time serial: 0.002787s
+[2026-06-06 17:26:26.563] [wmtk] [info] face swap prepare time: 0.000812s
+[2026-06-06 17:26:26.571] [wmtk] [info] executed: 3241 | success / fail: 4 / 3237
+[2026-06-06 17:26:26.571] [wmtk] [info] face swap operation time serial: 0.007965s
+[2026-06-06 17:26:26.571] [wmtk] [info] Energy: max = 6.1090823410066655 avg = 3.838975254026428
+[2026-06-06 17:26:26.571] [wmtk] [info] ==smoothing 0==
+[2026-06-06 17:26:26.571] [wmtk] [info] vertex smoothing prepare time: 1.7e-05s
+[2026-06-06 17:26:26.576] [wmtk] [info] executed: 574 | success / fail: 285 / 289
+[2026-06-06 17:26:26.576] [wmtk] [info] vertex smoothing operation time serial: 0.005744s
+[2026-06-06 17:26:26.576] [wmtk] [info] Energy: max = 6.383261697278814 avg = 3.8006594254762853
+[2026-06-06 17:26:26.577] [wmtk] [info] Energy: max = 6.383261697278814 avg = 3.8006594254762853
+[2026-06-06 17:26:26.577] [wmtk] [info] time = 0.0058839999999999995
+[2026-06-06 17:26:26.577] [wmtk] [info] max energy 6.383261697278814 stop 10
+[2026-06-06 17:26:26.577] [wmtk] [info] vert 574 tet 2425
+
+
+
+      4  6.587e+03  2.440e+03   4.227e-02  5.613e-06  1.548e-02   1.271e-01          0  1.240e-01  1.768e-01 4.842e-01  2.009e-01 4.510e-01    1 6.250e-02   Y
+   polyfem SIGABRT (likely benign max-iters throw); continuing.
+
+=== chunk 5/10: run 20 iter(s) (cumulative=100) ===
+   pre-iter ‖∇f‖ per term: total=0.1383  stress=0.1101  volume=0.0269  boundary_smoothing=0.1249
+Warning: Appending zeros to replace the missing physical tag data.
+Warning: Appending zeros to replace the missing geometrical tag data.
+[2026-06-06 17:45:14.399] [wmtk] [info] Loaded v: 574 t: 2425
+[2026-06-06 17:45:14.403] [wmtk] [info] Input Avg Length 0.06475065921364619
+[2026-06-06 17:45:14.403] [wmtk] [info] Energy: max = 6.974089211976476 avg = 3.8195235876212945
+[2026-06-06 17:45:14.404] [wmtk] [info] Energy: max = 6.974089211976476 avg = 3.8195235876212945
+[2026-06-06 17:45:14.404] [wmtk] [info] Energy: max = 6.974089211976476 avg = 3.8195235876212945
+[2026-06-06 17:45:14.404] [wmtk] [info] Energy: max = 6.974089211976476 avg = 3.8195235876212945
+[2026-06-06 17:45:14.404] [wmtk] [info] ==smoothing 0==
+[2026-06-06 17:45:14.404] [wmtk] [info] vertex smoothing prepare time: 2.6e-05s
+[2026-06-06 17:45:14.410] [wmtk] [info] executed: 574 | success / fail: 349 / 225
+[2026-06-06 17:45:14.410] [wmtk] [info] vertex smoothing operation time serial: 0.006134s
+[2026-06-06 17:45:14.410] [wmtk] [info] Energy: max = 6.974089211976476 avg = 3.787730570963496
+[2026-06-06 17:45:14.410] [wmtk] [info] Energy: max = 6.974089211976476 avg = 3.787730570963496
+[2026-06-06 17:45:14.410] [wmtk] [info] time = 0.006298
+[2026-06-06 17:45:14.410] [wmtk] [info] 
+========it 0========
+[2026-06-06 17:45:14.410] [wmtk] [info] Energy: max = 6.974089211976476 avg = 3.787730570963496
+[2026-06-06 17:45:14.410] [wmtk] [info] ==splitting 0==
+[2026-06-06 17:45:14.411] [wmtk] [info] edge split prepare time: 0.001027s
+[2026-06-06 17:45:14.416] [wmtk] [info] executed: 367 | success / fail: 94 / 273
+[2026-06-06 17:45:14.416] [wmtk] [info] edge split operation time: 0.0051519999999999995s
+[2026-06-06 17:45:14.417] [wmtk] [info] Energy: max = 6.974089211976476 avg = 3.8295567869905067
+[2026-06-06 17:45:14.417] [wmtk] [info] ==collapsing 0==
+[2026-06-06 17:45:14.418] [wmtk] [info] edge collapse prepare time: 0.0012699999999999999s
+[2026-06-06 17:45:14.418] [wmtk] [info] Prepare to collapse 7572
+[2026-06-06 17:45:14.477] [wmtk] [info] executed: 2359 | success / fail: 2 / 2357
+[2026-06-06 17:45:14.477] [wmtk] [info] Collapsed 2, retrying failed 2357
+[2026-06-06 17:45:14.477] [wmtk] [info] Prepare to collapse 2357
+[2026-06-06 17:45:14.533] [wmtk] [info] executed: 2356 | success / fail: 0 / 2356
+[2026-06-06 17:45:14.533] [wmtk] [info] Collapsed 0, retrying failed 2356
+[2026-06-06 17:45:14.533] [wmtk] [info] edge collapse operation time serial: 0.11549899999999999s
+[2026-06-06 17:45:14.533] [wmtk] [info] Energy: max = 6.974089211976476 avg = 3.8266803273674324
+[2026-06-06 17:45:14.533] [wmtk] [info] ==swapping 0==
+[2026-06-06 17:45:14.535] [wmtk] [info] edge swap 44 prepare time: 0.0011769999999999999s
+[2026-06-06 17:45:14.549] [wmtk] [info] executed: 4082 | success / fail: 34 / 4048
+[2026-06-06 17:45:14.549] [wmtk] [info] edge swap 44 operation time serial: 0.013866s
+[2026-06-06 17:45:14.550] [wmtk] [info] edge swap prepare time: 0.001004s
+[2026-06-06 17:45:14.553] [wmtk] [info] executed: 3798 | success / fail: 3 / 3795
+[2026-06-06 17:45:14.553] [wmtk] [info] edge swap operation time serial: 0.003234s
+[2026-06-06 17:45:14.554] [wmtk] [info] face swap prepare time: 0.000997s
+[2026-06-06 17:45:14.563] [wmtk] [info] executed: 3817 | success / fail: 6 / 3811
+[2026-06-06 17:45:14.563] [wmtk] [info] face swap operation time serial: 0.009186s
+[2026-06-06 17:45:14.563] [wmtk] [info] Energy: max = 6.974089211976476 avg = 3.807664087270154
+[2026-06-06 17:45:14.563] [wmtk] [info] ==smoothing 0==
+[2026-06-06 17:45:14.563] [wmtk] [info] vertex smoothing prepare time: 2.4e-05s
+[2026-06-06 17:45:14.570] [wmtk] [info] executed: 666 | success / fail: 347 / 319
+[2026-06-06 17:45:14.570] [wmtk] [info] vertex smoothing operation time serial: 0.006886s
+[2026-06-06 17:45:14.570] [wmtk] [info] Energy: max = 6.974089211976476 avg = 3.7803705283625395
+[2026-06-06 17:45:14.570] [wmtk] [info] Energy: max = 6.974089211976476 avg = 3.7803705283625395
+[2026-06-06 17:45:14.570] [wmtk] [info] time = 0.0070869999999999995
+[2026-06-06 17:45:14.570] [wmtk] [info] max energy 6.974089211976476 stop 10
+[2026-06-06 17:45:14.570] [wmtk] [info] vert 666 tet 2863
+
+
+
+      5  6.930e+03  2.648e+03   4.147e-02  5.887e-06  1.311e-02   1.101e-01  2.690e-02  1.249e-01  1.750e-01 2.858e-01  1.832e-01 2.858e-01    1 6.250e-02   Y
+   polyfem SIGABRT (likely benign max-iters throw); continuing.
+
+=== chunk 6/10: run 20 iter(s) (cumulative=120) ===
+   pre-iter ‖∇f‖ per term: total=0.1235  stress=0.1103  volume=0.02641  boundary_smoothing=0.1042
+Warning: Appending zeros to replace the missing physical tag data.
+Warning: Appending zeros to replace the missing geometrical tag data.
+[2026-06-06 18:05:52.528] [wmtk] [info] Loaded v: 666 t: 2863
+[2026-06-06 18:05:52.532] [wmtk] [info] Input Avg Length 0.061129368115883743
+[2026-06-06 18:05:52.533] [wmtk] [info] Energy: max = 6.911615355497234 avg = 3.7949616704398714
+[2026-06-06 18:05:52.533] [wmtk] [info] Energy: max = 6.911615355497234 avg = 3.7949616704398714
+[2026-06-06 18:05:52.533] [wmtk] [info] Energy: max = 6.911615355497234 avg = 3.7949616704398714
+[2026-06-06 18:05:52.533] [wmtk] [info] Energy: max = 6.911615355497234 avg = 3.7949616704398714
+[2026-06-06 18:05:52.533] [wmtk] [info] ==smoothing 0==
+[2026-06-06 18:05:52.533] [wmtk] [info] vertex smoothing prepare time: 3.6e-05s
+[2026-06-06 18:05:52.540] [wmtk] [info] executed: 666 | success / fail: 413 / 253
+[2026-06-06 18:05:52.540] [wmtk] [info] vertex smoothing operation time serial: 0.007233s
+[2026-06-06 18:05:52.540] [wmtk] [info] Energy: max = 6.678056031899055 avg = 3.7729841444894947
+[2026-06-06 18:05:52.540] [wmtk] [info] Energy: max = 6.678056031899055 avg = 3.7729841444894947
+[2026-06-06 18:05:52.540] [wmtk] [info] time = 0.007423
+[2026-06-06 18:05:52.540] [wmtk] [info] 
+========it 0========
+[2026-06-06 18:05:52.541] [wmtk] [info] Energy: max = 6.678056031899055 avg = 3.7729841444894947
+[2026-06-06 18:05:52.541] [wmtk] [info] ==splitting 0==
+[2026-06-06 18:05:52.542] [wmtk] [info] edge split prepare time: 0.001209s
+[2026-06-06 18:05:52.548] [wmtk] [info] executed: 434 | success / fail: 102 / 332
+[2026-06-06 18:05:52.548] [wmtk] [info] edge split operation time: 0.006098999999999999s
+[2026-06-06 18:05:52.548] [wmtk] [info] Energy: max = 6.396408374414646 avg = 3.8179685653114737
+[2026-06-06 18:05:52.548] [wmtk] [info] ==collapsing 0==
+[2026-06-06 18:05:52.550] [wmtk] [info] edge collapse prepare time: 0.0015119999999999999s
+[2026-06-06 18:05:52.550] [wmtk] [info] Prepare to collapse 8806
+[2026-06-06 18:05:52.624] [wmtk] [info] executed: 2745 | success / fail: 1 / 2744
+[2026-06-06 18:05:52.624] [wmtk] [info] Collapsed 1, retrying failed 2744
+[2026-06-06 18:05:52.624] [wmtk] [info] Prepare to collapse 2744
+[2026-06-06 18:05:52.695] [wmtk] [info] executed: 2744 | success / fail: 0 / 2744
+[2026-06-06 18:05:52.695] [wmtk] [info] Collapsed 0, retrying failed 2744
+[2026-06-06 18:05:52.695] [wmtk] [info] edge collapse operation time serial: 0.14496399999999998s
+[2026-06-06 18:05:52.695] [wmtk] [info] Energy: max = 6.396408374414646 avg = 3.814038966596818
+[2026-06-06 18:05:52.695] [wmtk] [info] ==swapping 0==
+[2026-06-06 18:05:52.696] [wmtk] [info] edge swap 44 prepare time: 0.001281s
+[2026-06-06 18:05:52.712] [wmtk] [info] executed: 4679 | success / fail: 33 / 4646
+[2026-06-06 18:05:52.712] [wmtk] [info] edge swap 44 operation time serial: 0.016153s
+[2026-06-06 18:05:52.714] [wmtk] [info] edge swap prepare time: 0.00138s
+[2026-06-06 18:05:52.717] [wmtk] [info] executed: 4404 | success / fail: 1 / 4403
+[2026-06-06 18:05:52.717] [wmtk] [info] edge swap operation time serial: 0.00374s
+[2026-06-06 18:05:52.719] [wmtk] [info] face swap prepare time: 0.001179s
+[2026-06-06 18:05:52.730] [wmtk] [info] executed: 4434 | success / fail: 6 / 4428
+[2026-06-06 18:05:52.730] [wmtk] [info] face swap operation time serial: 0.010938999999999999s
+[2026-06-06 18:05:52.730] [wmtk] [info] Energy: max = 6.396408374414646 avg = 3.7960212832348517
+[2026-06-06 18:05:52.730] [wmtk] [info] ==smoothing 0==
+[2026-06-06 18:05:52.730] [wmtk] [info] vertex smoothing prepare time: 1.9999999999999998e-05s
+[2026-06-06 18:05:52.738] [wmtk] [info] executed: 767 | success / fail: 417 / 350
+[2026-06-06 18:05:52.738] [wmtk] [info] vertex smoothing operation time serial: 0.008268s
+[2026-06-06 18:05:52.738] [wmtk] [info] Energy: max = 6.396408374414646 avg = 3.7686852422966455
+[2026-06-06 18:05:52.738] [wmtk] [info] Energy: max = 6.396408374414646 avg = 3.7686852422966455
+[2026-06-06 18:05:52.738] [wmtk] [info] time = 0.00848
+[2026-06-06 18:05:52.738] [wmtk] [info] max energy 6.396408374414646 stop 10
+[2026-06-06 18:05:52.738] [wmtk] [info] vert 767 tet 3373
+
+
+
+  chunk       maxσ        L8σ      stress     volume     smooth      ‖∇str‖     ‖∇vol‖     ‖∇smt‖     sjT    sjS    sjT*   sjS*  try     step rem
+      6  5.793e+03  2.398e+03   4.041e-02  5.564e-06  1.186e-02   1.103e-01  2.641e-02  1.042e-01  1.932e-01 3.232e-01  1.962e-01 3.232e-01    2 3.125e-02   Y
+   polyfem SIGABRT (likely benign max-iters throw); continuing.
+
+=== chunk 7/10: run 20 iter(s) (cumulative=140) ===
+   pre-iter ‖∇f‖ per term: total=0.1003  stress=0.08958  volume=0.0253  boundary_smoothing=0.08403
+Warning: Appending zeros to replace the missing physical tag data.
+Warning: Appending zeros to replace the missing geometrical tag data.
+[2026-06-06 18:30:11.978] [wmtk] [info] Loaded v: 767 t: 3373
+[2026-06-06 18:30:11.984] [wmtk] [info] Input Avg Length 0.05784213117275882
+[2026-06-06 18:30:11.984] [wmtk] [info] Energy: max = 7.515984965664961 avg = 3.7831901407639754
+[2026-06-06 18:30:11.984] [wmtk] [info] Energy: max = 7.515984965664961 avg = 3.7831901407639754
+[2026-06-06 18:30:11.984] [wmtk] [info] Energy: max = 7.515984965664961 avg = 3.7831901407639754
+[2026-06-06 18:30:11.984] [wmtk] [info] Energy: max = 7.515984965664961 avg = 3.7831901407639754
+[2026-06-06 18:30:11.984] [wmtk] [info] ==smoothing 0==
+[2026-06-06 18:30:11.985] [wmtk] [info] vertex smoothing prepare time: 2.9e-05s
+[2026-06-06 18:30:11.993] [wmtk] [info] executed: 767 | success / fail: 501 / 266
+[2026-06-06 18:30:11.993] [wmtk] [info] vertex smoothing operation time serial: 0.008564s
+[2026-06-06 18:30:11.993] [wmtk] [info] Energy: max = 6.292854597547337 avg = 3.7615992025297857
+[2026-06-06 18:30:11.993] [wmtk] [info] Energy: max = 6.292854597547337 avg = 3.7615992025297857
+[2026-06-06 18:30:11.993] [wmtk] [info] time = 0.008754
+[2026-06-06 18:30:11.993] [wmtk] [info] 
+========it 0========
+[2026-06-06 18:30:11.993] [wmtk] [info] Energy: max = 6.292854597547337 avg = 3.7615992025297857
+[2026-06-06 18:30:11.993] [wmtk] [info] ==splitting 0==
+[2026-06-06 18:30:11.995] [wmtk] [info] edge split prepare time: 0.001478s
+[2026-06-06 18:30:12.002] [wmtk] [info] executed: 509 | success / fail: 103 / 406
+[2026-06-06 18:30:12.002] [wmtk] [info] edge split operation time: 0.006522s
+[2026-06-06 18:30:12.002] [wmtk] [info] Energy: max = 6.292854597547337 avg = 3.808774492640392
+[2026-06-06 18:30:12.002] [wmtk] [info] ==collapsing 0==
+[2026-06-06 18:30:12.003] [wmtk] [info] edge collapse prepare time: 0.0016899999999999999s
+[2026-06-06 18:30:12.003] [wmtk] [info] Prepare to collapse 10008
+[2026-06-06 18:30:12.085] [wmtk] [info] executed: 3009 | success / fail: 2 / 3007
+[2026-06-06 18:30:12.085] [wmtk] [info] Collapsed 2, retrying failed 3007
+[2026-06-06 18:30:12.085] [wmtk] [info] Prepare to collapse 3007
+[2026-06-06 18:30:12.164] [wmtk] [info] executed: 3004 | success / fail: 0 / 3004
+[2026-06-06 18:30:12.164] [wmtk] [info] Collapsed 0, retrying failed 3004
+[2026-06-06 18:30:12.164] [wmtk] [info] edge collapse operation time serial: 0.16100699999999998s
+[2026-06-06 18:30:12.164] [wmtk] [info] Energy: max = 6.219621357350104 avg = 3.8071824479322918
+[2026-06-06 18:30:12.164] [wmtk] [info] ==swapping 0==
+[2026-06-06 18:30:12.166] [wmtk] [info] edge swap 44 prepare time: 0.0015049999999999998s
+[2026-06-06 18:30:12.186] [wmtk] [info] executed: 5333 | success / fail: 37 / 5296
+[2026-06-06 18:30:12.186] [wmtk] [info] edge swap 44 operation time serial: 0.01954s
+[2026-06-06 18:30:12.187] [wmtk] [info] edge swap prepare time: 0.0013759999999999998s
+[2026-06-06 18:30:12.191] [wmtk] [info] executed: 5027 | success / fail: 5 / 5022
+[2026-06-06 18:30:12.191] [wmtk] [info] edge swap operation time serial: 0.004399999999999999s
+[2026-06-06 18:30:12.193] [wmtk] [info] face swap prepare time: 0.0013449999999999998s
+[2026-06-06 18:30:12.206] [wmtk] [info] executed: 5018 | success / fail: 4 / 5014
+[2026-06-06 18:30:12.206] [wmtk] [info] face swap operation time serial: 0.013203s
+[2026-06-06 18:30:12.206] [wmtk] [info] Energy: max = 6.219621357350104 avg = 3.791469828587829
+[2026-06-06 18:30:12.206] [wmtk] [info] ==smoothing 0==
+[2026-06-06 18:30:12.206] [wmtk] [info] vertex smoothing prepare time: 2.4e-05s
+[2026-06-06 18:30:12.216] [wmtk] [info] executed: 868 | success / fail: 499 / 369
+[2026-06-06 18:30:12.216] [wmtk] [info] vertex smoothing operation time serial: 0.009670999999999999s
+[2026-06-06 18:30:12.216] [wmtk] [info] Energy: max = 6.219621357350104 avg = 3.7686377133029936
+[2026-06-06 18:30:12.216] [wmtk] [info] Energy: max = 6.219621357350104 avg = 3.7686377133029936
+[2026-06-06 18:30:12.216] [wmtk] [info] time = 0.00992
+[2026-06-06 18:30:12.216] [wmtk] [info] max energy 6.219621357350104 stop 10
+[2026-06-06 18:30:12.216] [wmtk] [info] vert 868 tet 3834
+
+
+
+      7  6.749e+03  2.502e+03   3.938e-02  4.197e-06  1.133e-02   8.958e-02  2.530e-02  8.403e-02  1.468e-01 3.064e-01  1.996e-01 3.064e-01    1 6.250e-02   Y
+   polyfem SIGABRT (likely benign max-iters throw); continuing.
+
+=== chunk 8/10: run 20 iter(s) (cumulative=160) ===
+   pre-iter ‖∇f‖ per term: total=0.1259  stress=0.1065  volume=0.02127  boundary_smoothing=0.0984
+Warning: Appending zeros to replace the missing physical tag data.
+Warning: Appending zeros to replace the missing geometrical tag data.
+[2026-06-06 18:58:13.086] [wmtk] [info] Loaded v: 868 t: 3834
+[2026-06-06 18:58:13.092] [wmtk] [info] Input Avg Length 0.05526576999604677
+[2026-06-06 18:58:13.092] [wmtk] [info] Energy: max = 6.907953749845497 avg = 3.77589576056233
+[2026-06-06 18:58:13.092] [wmtk] [info] Energy: max = 6.907953749845497 avg = 3.77589576056233
+[2026-06-06 18:58:13.092] [wmtk] [info] Energy: max = 6.907953749845497 avg = 3.77589576056233
+[2026-06-06 18:58:13.093] [wmtk] [info] Energy: max = 6.907953749845497 avg = 3.77589576056233
+[2026-06-06 18:58:13.093] [wmtk] [info] ==smoothing 0==
+[2026-06-06 18:58:13.093] [wmtk] [info] vertex smoothing prepare time: 3.1e-05s
+[2026-06-06 18:58:13.102] [wmtk] [info] executed: 868 | success / fail: 574 / 294
+[2026-06-06 18:58:13.103] [wmtk] [info] vertex smoothing operation time serial: 0.009930999999999999s
+[2026-06-06 18:58:13.103] [wmtk] [info] Energy: max = 6.533655059792783 avg = 3.756568875150551
+[2026-06-06 18:58:13.103] [wmtk] [info] Energy: max = 6.533655059792783 avg = 3.756568875150551
+[2026-06-06 18:58:13.103] [wmtk] [info] time = 0.010157
+[2026-06-06 18:58:13.103] [wmtk] [info] 
+========it 0========
+[2026-06-06 18:58:13.103] [wmtk] [info] Energy: max = 6.533655059792783 avg = 3.756568875150551
+[2026-06-06 18:58:13.103] [wmtk] [info] ==splitting 0==
+[2026-06-06 18:58:13.105] [wmtk] [info] edge split prepare time: 0.001658s
+[2026-06-06 18:58:13.112] [wmtk] [info] executed: 606 | success / fail: 124 / 482
+[2026-06-06 18:58:13.112] [wmtk] [info] edge split operation time: 0.007742s
+[2026-06-06 18:58:13.113] [wmtk] [info] Energy: max = 6.533655059792783 avg = 3.805437974945541
+[2026-06-06 18:58:13.113] [wmtk] [info] ==collapsing 0==
+[2026-06-06 18:58:13.115] [wmtk] [info] edge collapse prepare time: 0.002026s
+[2026-06-06 18:58:13.115] [wmtk] [info] Prepare to collapse 11480
+[2026-06-06 18:58:13.204] [wmtk] [info] executed: 3486 | success / fail: 0 / 3486
+[2026-06-06 18:58:13.204] [wmtk] [info] Collapsed 0, retrying failed 3486
+[2026-06-06 18:58:13.204] [wmtk] [info] edge collapse operation time serial: 0.089831s
+[2026-06-06 18:58:13.205] [wmtk] [info] Energy: max = 6.533655059792783 avg = 3.805437974945541
+[2026-06-06 18:58:13.205] [wmtk] [info] ==swapping 0==
+[2026-06-06 18:58:13.206] [wmtk] [info] edge swap 44 prepare time: 0.001583s
+[2026-06-06 18:58:13.228] [wmtk] [info] executed: 6055 | success / fail: 34 / 6021
+[2026-06-06 18:58:13.228] [wmtk] [info] edge swap 44 operation time serial: 0.021682s
+[2026-06-06 18:58:13.229] [wmtk] [info] edge swap prepare time: 0.001619s
+[2026-06-06 18:58:13.234] [wmtk] [info] executed: 5756 | success / fail: 2 / 5754
+[2026-06-06 18:58:13.234] [wmtk] [info] edge swap operation time serial: 0.004957s
+[2026-06-06 18:58:13.236] [wmtk] [info] face swap prepare time: 0.001544s
+[2026-06-06 18:58:13.250] [wmtk] [info] executed: 5766 | success / fail: 4 / 5762
+[2026-06-06 18:58:13.250] [wmtk] [info] face swap operation time serial: 0.013904999999999999s
+[2026-06-06 18:58:13.250] [wmtk] [info] Energy: max = 6.533655059792783 avg = 3.795752084117801
+[2026-06-06 18:58:13.250] [wmtk] [info] ==smoothing 0==
+[2026-06-06 18:58:13.250] [wmtk] [info] vertex smoothing prepare time: 2.4999999999999998e-05s
+[2026-06-06 18:58:13.261] [wmtk] [info] executed: 992 | success / fail: 576 / 416
+[2026-06-06 18:58:13.261] [wmtk] [info] vertex smoothing operation time serial: 0.011059s
+[2026-06-06 18:58:13.261] [wmtk] [info] Energy: max = 6.422127708569426 avg = 3.7729172136986353
+[2026-06-06 18:58:13.261] [wmtk] [info] Energy: max = 6.422127708569426 avg = 3.7729172136986353
+[2026-06-06 18:58:13.261] [wmtk] [info] time = 0.011335999999999999
+[2026-06-06 18:58:13.261] [wmtk] [info] max energy 6.422127708569426 stop 10
+[2026-06-06 18:58:13.261] [wmtk] [info] vert 992 tet 4431
+
+
+
+      8  6.448e+03  2.565e+03   3.876e-02  5.337e-06  1.027e-02   1.065e-01  2.127e-02  9.840e-02  1.788e-01 3.151e-01  1.864e-01 3.151e-01    2 1.562e-02   Y
+   polyfem SIGABRT (likely benign max-iters throw); continuing.
+
+=== chunk 9/10: run 20 iter(s) (cumulative=180) ===
+   pre-iter ‖∇f‖ per term: total=0.1049  stress=0.08626  volume=0.02318  boundary_smoothing=0.09311
+Warning: Appending zeros to replace the missing physical tag data.
+Warning: Appending zeros to replace the missing geometrical tag data.
+[2026-06-06 19:30:07.016] [wmtk] [info] Loaded v: 992 t: 4431
+[2026-06-06 19:30:07.023] [wmtk] [info] Input Avg Length 0.052676491676907265
+[2026-06-06 19:30:07.024] [wmtk] [info] Energy: max = 6.524769028474658 avg = 3.7786762762979103
+[2026-06-06 19:30:07.024] [wmtk] [info] Energy: max = 6.524769028474658 avg = 3.7786762762979103
+[2026-06-06 19:30:07.024] [wmtk] [info] Energy: max = 6.524769028474658 avg = 3.7786762762979103
+[2026-06-06 19:30:07.024] [wmtk] [info] Energy: max = 6.524769028474658 avg = 3.7786762762979103
+[2026-06-06 19:30:07.024] [wmtk] [info] ==smoothing 0==
+[2026-06-06 19:30:07.024] [wmtk] [info] vertex smoothing prepare time: 4.4e-05s
+[2026-06-06 19:30:07.036] [wmtk] [info] executed: 992 | success / fail: 670 / 322
+[2026-06-06 19:30:07.036] [wmtk] [info] vertex smoothing operation time serial: 0.011483s
+[2026-06-06 19:30:07.036] [wmtk] [info] Energy: max = 6.441875070945176 avg = 3.758773095555544
+[2026-06-06 19:30:07.036] [wmtk] [info] Energy: max = 6.441875070945176 avg = 3.758773095555544
+[2026-06-06 19:30:07.036] [wmtk] [info] time = 0.011764
+[2026-06-06 19:30:07.036] [wmtk] [info] 
+========it 0========
+[2026-06-06 19:30:07.036] [wmtk] [info] Energy: max = 6.441875070945176 avg = 3.758773095555544
+[2026-06-06 19:30:07.036] [wmtk] [info] ==splitting 0==
+[2026-06-06 19:30:07.038] [wmtk] [info] edge split prepare time: 0.001849s
+[2026-06-06 19:30:07.047] [wmtk] [info] executed: 649 | success / fail: 107 / 542
+[2026-06-06 19:30:07.047] [wmtk] [info] edge split operation time: 0.008799999999999999s
+[2026-06-06 19:30:07.047] [wmtk] [info] Energy: max = 6.441875070945176 avg = 3.7912187808513713
+[2026-06-06 19:30:07.047] [wmtk] [info] ==collapsing 0==
+[2026-06-06 19:30:07.050] [wmtk] [info] edge collapse prepare time: 0.002215s
+[2026-06-06 19:30:07.050] [wmtk] [info] Prepare to collapse 12728
+[2026-06-06 19:30:07.163] [wmtk] [info] executed: 3696 | success / fail: 2 / 3694
+[2026-06-06 19:30:07.163] [wmtk] [info] Collapsed 2, retrying failed 3694
+[2026-06-06 19:30:07.163] [wmtk] [info] Prepare to collapse 3694
+[2026-06-06 19:30:07.272] [wmtk] [info] executed: 3694 | success / fail: 0 / 3694
+[2026-06-06 19:30:07.272] [wmtk] [info] Collapsed 0, retrying failed 3694
+[2026-06-06 19:30:07.272] [wmtk] [info] edge collapse operation time serial: 0.22288s
+[2026-06-06 19:30:07.273] [wmtk] [info] Energy: max = 6.441875070945176 avg = 3.7892029751977403
+[2026-06-06 19:30:07.273] [wmtk] [info] ==swapping 0==
+[2026-06-06 19:30:07.274] [wmtk] [info] edge swap 44 prepare time: 0.0019459999999999998s
+[2026-06-06 19:30:07.299] [wmtk] [info] executed: 6687 | success / fail: 37 / 6650
+[2026-06-06 19:30:07.299] [wmtk] [info] edge swap 44 operation time serial: 0.024357999999999998s
+[2026-06-06 19:30:07.301] [wmtk] [info] edge swap prepare time: 0.001767s
+[2026-06-06 19:30:07.306] [wmtk] [info] executed: 6369 | success / fail: 2 / 6367
+[2026-06-06 19:30:07.306] [wmtk] [info] edge swap operation time serial: 0.005555s
+[2026-06-06 19:30:07.308] [wmtk] [info] face swap prepare time: 0.001741s
+[2026-06-06 19:30:07.324] [wmtk] [info] executed: 6381 | success / fail: 5 / 6376
+[2026-06-06 19:30:07.324] [wmtk] [info] face swap operation time serial: 0.015599s
+[2026-06-06 19:30:07.324] [wmtk] [info] Energy: max = 6.441875070945176 avg = 3.779179158732726
+[2026-06-06 19:30:07.324] [wmtk] [info] ==smoothing 0==
+[2026-06-06 19:30:07.324] [wmtk] [info] vertex smoothing prepare time: 4.4999999999999996e-05s
+[2026-06-06 19:30:07.336] [wmtk] [info] executed: 1097 | success / fail: 669 / 428
+[2026-06-06 19:30:07.336] [wmtk] [info] vertex smoothing operation time serial: 0.012504999999999999s
+[2026-06-06 19:30:07.336] [wmtk] [info] Energy: max = 6.433127541991984 avg = 3.7593259006313797
+[2026-06-06 19:30:07.337] [wmtk] [info] Energy: max = 6.433127541991984 avg = 3.7593259006313797
+[2026-06-06 19:30:07.337] [wmtk] [info] time = 0.012813
+[2026-06-06 19:30:07.337] [wmtk] [info] max energy 6.433127541991984 stop 10
+[2026-06-06 19:30:07.337] [wmtk] [info] vert 1097 tet 4909
+
+
+
+      9  7.345e+03  2.558e+03   3.822e-02  3.940e-06  9.617e-03   8.626e-02  2.318e-02  9.311e-02  1.822e-01 3.134e-01  1.937e-01 3.134e-01    1 3.125e-02   Y
+   polyfem SIGABRT (likely benign max-iters throw); continuing.
+
+=== chunk 10/10: run 20 iter(s) (cumulative=200) ===
+   pre-iter ‖∇f‖ per term: total=0.1217  stress=0.09635  volume=0.01917  boundary_smoothing=0.09383
+Warning: Appending zeros to replace the missing physical tag data.
+Warning: Appending zeros to replace the missing geometrical tag data.
+[2026-06-06 20:05:39.624] [wmtk] [info] Loaded v: 1097 t: 4909
+[2026-06-06 20:05:39.632] [wmtk] [info] Input Avg Length 0.05077483367700454
+[2026-06-06 20:05:39.632] [wmtk] [info] Energy: max = 6.884958617418871 avg = 3.76648867159529
+[2026-06-06 20:05:39.633] [wmtk] [info] Energy: max = 6.884958617418871 avg = 3.76648867159529
+[2026-06-06 20:05:39.633] [wmtk] [info] Energy: max = 6.884958617418871 avg = 3.76648867159529
+[2026-06-06 20:05:39.633] [wmtk] [info] Energy: max = 6.884958617418871 avg = 3.76648867159529
+[2026-06-06 20:05:39.633] [wmtk] [info] ==smoothing 0==
+[2026-06-06 20:05:39.633] [wmtk] [info] vertex smoothing prepare time: 5.4e-05s
+[2026-06-06 20:05:39.646] [wmtk] [info] executed: 1097 | success / fail: 743 / 354
+[2026-06-06 20:05:39.646] [wmtk] [info] vertex smoothing operation time serial: 0.012598s
+[2026-06-06 20:05:39.646] [wmtk] [info] Energy: max = 6.761352869209173 avg = 3.7535600611969717
+[2026-06-06 20:05:39.646] [wmtk] [info] Energy: max = 6.761352869209173 avg = 3.7535600611969717
+[2026-06-06 20:05:39.646] [wmtk] [info] time = 0.012905999999999999
+[2026-06-06 20:05:39.646] [wmtk] [info] 
+========it 0========
+[2026-06-06 20:05:39.646] [wmtk] [info] Energy: max = 6.761352869209173 avg = 3.7535600611969717
+[2026-06-06 20:05:39.646] [wmtk] [info] ==splitting 0==
+[2026-06-06 20:05:39.648] [wmtk] [info] edge split prepare time: 0.002048s
+[2026-06-06 20:05:39.658] [wmtk] [info] executed: 772 | success / fail: 154 / 618
+[2026-06-06 20:05:39.658] [wmtk] [info] edge split operation time: 0.009885s
+[2026-06-06 20:05:39.658] [wmtk] [info] Energy: max = 6.761352869209173 avg = 3.8008142075564857
+[2026-06-06 20:05:39.658] [wmtk] [info] ==collapsing 0==
+[2026-06-06 20:05:39.661] [wmtk] [info] edge collapse prepare time: 0.002131s
+[2026-06-06 20:05:39.661] [wmtk] [info] Prepare to collapse 14540
+[2026-06-06 20:05:39.796] [wmtk] [info] executed: 4399 | success / fail: 1 / 4398
+[2026-06-06 20:05:39.796] [wmtk] [info] Collapsed 1, retrying failed 4398
+[2026-06-06 20:05:39.797] [wmtk] [info] Prepare to collapse 4398
+[2026-06-06 20:05:39.928] [wmtk] [info] executed: 4398 | success / fail: 0 / 4398
+[2026-06-06 20:05:39.928] [wmtk] [info] Collapsed 0, retrying failed 4398
+[2026-06-06 20:05:39.928] [wmtk] [info] edge collapse operation time serial: 0.26702s
+[2026-06-06 20:05:39.928] [wmtk] [info] Energy: max = 6.761352869209173 avg = 3.8001440485053184
+[2026-06-06 20:05:39.928] [wmtk] [info] ==swapping 0==
+[2026-06-06 20:05:39.930] [wmtk] [info] edge swap 44 prepare time: 0.002371s
+[2026-06-06 20:05:39.959] [wmtk] [info] executed: 7722 | success / fail: 51 / 7671
+[2026-06-06 20:05:39.959] [wmtk] [info] edge swap 44 operation time serial: 0.028798999999999998s
+[2026-06-06 20:05:39.961] [wmtk] [info] edge swap prepare time: 0.002192s
+[2026-06-06 20:05:39.968] [wmtk] [info] executed: 7281 | success / fail: 2 / 7279
+[2026-06-06 20:05:39.968] [wmtk] [info] edge swap operation time serial: 0.0063419999999999995s
+[2026-06-06 20:05:39.970] [wmtk] [info] face swap prepare time: 0.0020109999999999998s
+[2026-06-06 20:05:39.989] [wmtk] [info] executed: 7297 | success / fail: 5 / 7292
+[2026-06-06 20:05:39.989] [wmtk] [info] face swap operation time serial: 0.019849s
+[2026-06-06 20:05:39.990] [wmtk] [info] Energy: max = 6.761352869209173 avg = 3.7890071924112676
+[2026-06-06 20:05:39.990] [wmtk] [info] ==smoothing 0==
+[2026-06-06 20:05:39.990] [wmtk] [info] vertex smoothing prepare time: 3.5e-05s
+[2026-06-06 20:05:40.004] [wmtk] [info] executed: 1250 | success / fail: 742 / 508
+[2026-06-06 20:05:40.004] [wmtk] [info] vertex smoothing operation time serial: 0.013951999999999999s
+[2026-06-06 20:05:40.004] [wmtk] [info] Energy: max = 6.78603319190294 avg = 3.769283771442866
+[2026-06-06 20:05:40.004] [wmtk] [info] Energy: max = 6.78603319190294 avg = 3.769283771442866
+[2026-06-06 20:05:40.004] [wmtk] [info] time = 0.014287999999999999
+[2026-06-06 20:05:40.004] [wmtk] [info] max energy 6.78603319190294 stop 10
+[2026-06-06 20:05:40.004] [wmtk] [info] vert 1250 tet 5627
+
+
+
+     10  6.761e+03  2.472e+03   3.774e-02  4.687e-06  9.063e-03   9.635e-02  1.917e-02  9.383e-02  1.924e-01 3.168e-01  2.075e-01 3.168e-01    2 1.562e-02   Y
+   polyfem SIGABRT (likely benign max-iters throw); continuing.
