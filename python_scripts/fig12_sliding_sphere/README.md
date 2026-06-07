@@ -54,19 +54,6 @@ python3 adaptive_smoothing.py 2>&1 | tee run.log
 Initial state (chunk 0): maxσ ≈ 9.04e+04, L⁸σ ≈ 4.17e+04, weighted stress ≈
 0.156, weighted smooth ≈ 0.0126.
 
-| chunk | maxσ | L⁸σ | stress | smooth | sj_tet_post |
-|------:|-----:|----:|-------:|-------:|------------:|
-| 1 | 1.33e+04 | 6.40e+03 | 0.0603 | 0.0259 | 0.16 |
-| 2 | 2.11e+04 | 7.76e+03 | 0.0510 | 0.0199 | 0.10 |
-| 3 | 1.06e+04 | 4.29e+03 | 0.0465 | 0.0177 | 0.24 |
-| 4 | 6.59e+03 | 2.44e+03 | 0.0423 | 0.0155 | 0.20 |
-| 5 | 6.93e+03 | 2.65e+03 | 0.0415 | 0.0131 | 0.18 |
-| 6 | 5.79e+03 | 2.40e+03 | 0.0404 | 0.0119 | 0.20 |
-| 7 | 6.75e+03 | 2.50e+03 | 0.0394 | 0.0113 | 0.20 |
-| 8 | 6.45e+03 | 2.57e+03 | 0.0388 | 0.0103 | 0.19 |
-| 9 | 7.35e+03 | 2.56e+03 | 0.0382 | 0.0096 | 0.19 |
-| 10 | 6.76e+03 | 2.47e+03 | 0.0377 | 0.0091 | 0.21 |
-
 Cumulative reduction: **maxσ −92.5 %, L⁸σ −94 %, weighted stress −76 %,
 ‖∇str‖ −94 %**. Chunk 1 alone takes maxσ from 9.0e+04 → 1.3e+04 (−85 %)
 because the L-BFGS step is no longer artificially clamped (we use
