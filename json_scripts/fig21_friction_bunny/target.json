@@ -40,7 +40,7 @@
             "line_search": {
                 "method": "Backtracking"
             },
-            "grad_norm": 1e-3
+            "grad_norm_tol": 1e-3
         },
         "contact": {
             "barrier_stiffness": 1e4
