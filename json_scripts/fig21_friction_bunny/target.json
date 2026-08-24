@@ -42,7 +42,7 @@
                 "method": "Backtracking"
             },
             "grad_norm_tol": 0,
-            "newton_decrement_tol": 1e-3
+            "newton_decrement_tol": 1e-7
         },
         "contact": {
             "barrier_stiffness": 1e4
