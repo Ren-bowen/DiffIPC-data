@@ -25,7 +25,7 @@
         }
     ],
     "space": {
-        "discr_order": 2,
+        "discr_order": 1,
         "advanced": {
             "quadrature_order": 5
         }
@@ -35,7 +35,16 @@
             "solver": ["Eigen::PardisoLDLT", "Eigen::AccelerateLDLT", "Eigen::SimplicialLDLT"]
         },
         "nonlinear": {
-            "grad_norm": 1e-07
+            "solver": "Newton",
+            "norm_type": "Linf",
+            "x_delta_tol": 6.92820323027551e-11,
+            "grad_norm_tol": 0,
+            "rel_grad_norm_tol": 0,
+            "first_grad_norm_tol": 0,
+            "max_iterations": 2000
+        },
+        "advanced": {
+            "scale_grad_norm_by_characteristic_length": true
         }
     },
     "boundary_conditions": {
@@ -59,9 +68,10 @@
         ]
     },
     "materials": {
-        "type": "NeoHookean",
+        "type": "StableNeoHookean",
         "E": 100000.0,
-        "nu": 0.05
+        "nu": 0.05,
+        "rho": 1000.0
     },
     "output": {
         "log": {

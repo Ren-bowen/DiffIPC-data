@@ -25,14 +25,14 @@
             "volume_selection": 2,
             "surface_selection": 2,
             "transformation": {
-                "translation": [0, -2.4, 0],
+                "translation": [0, -2, 0],
                 "rotation": [180,0,0]
             }
         }
     ],
     "contact": {
         "enabled": true,
-        "dhat": 5e-3,
+        "dhat": 1e-3,
         "use_convergent_formulation": true,
         "friction_coefficient": 1
     },
@@ -42,7 +42,7 @@
         "velocity": [
             {
                 "id": 1,
-                "value": [0,-2,0]
+                "value": [0,0,0]
             },
             {
                 "id": 2,
@@ -55,15 +55,23 @@
             "E": 2e4,
             "nu": 0.4,
             "rho": 100,
-            "type": "NeoHookean"
+            "type": "StableNeoHookean"
         },
     "solver": {
         "linear": {
             "solver": ["Eigen::PardisoLDLT", "Eigen::AccelerateLDLT", "Eigen::SimplicialLDLT"]
         },
         "nonlinear": {
-            "grad_norm": 1e-4,
+            "solver": "Newton",
+            "norm_type": "Linf",
+            "x_delta_tol": 1.1348618476621229e-4,
+            "grad_norm_tol": 0,
+            "rel_grad_norm_tol": 0,
+            "first_grad_norm_tol": 0,
             "max_iterations": 2000
+        },
+        "advanced": {
+            "scale_grad_norm_by_characteristic_length": true
         },
         "contact": {
             "barrier_stiffness": 2e3

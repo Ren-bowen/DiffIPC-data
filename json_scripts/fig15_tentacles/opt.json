@@ -38,7 +38,7 @@
                 "method": "Backtracking"
             },
             "solver": "L-BFGS-B",
-            "grad_norm": 1e-5,
+            "grad_norm_tol": 1e-5,
             "box_constraints": {
                 "max_change": 0.5,
                 "bounds": [[-0.2,-2,-0.2], [0.2,0,0.2]]

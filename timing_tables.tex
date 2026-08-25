@@ -1,0 +1,102 @@
+\documentclass[10pt]{article}
+
+\usepackage[margin=0.55in]{geometry}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{makecell}
+
+\newcommand{\na}{\text{n/a}}
+\newcommand{\speed}[1]{#1$\times$}
+\newcommand{\setcell}[1]{\makecell[l]{#1}}
+
+\title{Unified GIPC and DiffIPC Timing Tables}
+\author{}
+\date{2026-08-25}
+
+\begin{document}
+\maketitle
+
+\noindent
+All times are in seconds.  The six phase columns are, in order, forward
+linear solve, forward CCD, forward Hessian assembly, forward line search,
+backward Hessian assembly, and backward linear solve.  Each phase value is an
+average for one complete forward rollout or one complete backward call.  The
+``Avg. sim.+bwd'' column is the sum of these six phase averages.
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{2.1pt}
+\caption{Nine-experiment Unified GIPC timing profile, with the physics and
+convergence settings used for each experiment.  The speedup is defined as
+$T_{\mathrm{DiffIPC}}/T_{\mathrm{Unified}}$ using the five-Fig phase
+comparison in Table~\ref{tab:five-comparison}; ``n/a'' means that no
+comparable DiffIPC phase profile is available for that experiment.}
+\label{tab:unified-nine}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{l l r r r r r r r r r}
+\toprule
+Case & Parameters / settings & Fwd. linear & Fwd. CCD & Fwd. Hessian & Fwd. LS & Bwd. Hessian & Bwd. linear & Avg. sim.+bwd & Speedup & Total wall \\
+ & & \multicolumn{6}{c}{seconds per complete rollout/call} & (s) & Unified GIPC & (s) \\
+\midrule
+Fig.~1 & \setcell{$dt=0.05$; $E=10^{6}$, $\nu=0.48$;\\gap/$dHat=2.257765\mathrm{e}{-3}/5.097503\mathrm{e}{-6}$;\\friction $0/0$; Newton/PCG $10^{-4}/10^{-6}$}
+& 0.708515 & 0.082882 & 0.032730 & 0.020774 & 0.004335 & 0.065930 & 0.915166 & \speed{64.91} & 45.002 \\
+Fig.~10 & \setcell{$dt=0.02$; $E=10^{9}$, $\nu=0.49$;\\gap/$dHat=3.0\mathrm{e}{-4}/9.0\mathrm{e}{-8}$;\\friction $0/0$; Newton/PCG $10^{-3}/10^{-8}$}
+& 1.436840 & 0.003528 & 0.002826 & 0.000949 & 0.001877 & 1.314336 & 2.760356 & \speed{0.447} & 460.008 \\
+Fig.~15 & \setcell{$dt=0.005$; $E=2.0\times10^{4}$, $\nu=0.4$;\\gap/$dHat=10^{-3}/10^{-6}$; friction $1/1$;\\Newton/PCG $10^{-2}/10^{-4}$}
+& 3.358900 & 1.467451 & 0.683697 & 0.535019 & 0.028914 & 0.150478 & 6.224459 & \speed{72.62} & 440.008 \\
+Fig.~18 & \setcell{$dt=1.0$; initial $E=5.506616\times10^{4}$, $\nu=0.25$;\\target $E=10^{5}$, $\nu=0.05$; gap/$dHat=10^{-3}/10^{-6}$;\\Newton/PCG $10^{-9}/10^{-8}$}
+& 0.032731 & 0.001474 & 0.003065 & 0.001216 & 0.000184 & 0.002527 & 0.041197 & \speed{153.66} & 40.001 \\
+Fig.~21 & \setcell{$dt=0.05$; $E=10^{5}$, $\nu=0.48$;\\gap/$dHat=10^{-3}/10^{-6}$; optimized friction\\initial/target $0.5/0.1$; Newton/PCG $10^{-3}/10^{-6}$}
+& 4.845797 & 2.159916 & 0.435139 & 0.239485 & 0.011212 & 0.126737 & 7.818286 & \speed{40.23} & 190.004 \\
+Dress10 & \setcell{$dt=1/24$; gap/$dHat=10^{-3}/10^{-6}$;\\stretch $E=5.0\times10^{8}$, shear $E=5.0\times10^{4}$,\\bend $E=5.0\times10^{7}$; Newton/PCG $10^{-3}/10^{-6}$}
+& 28.757504 & 0.753719 & 0.306255 & 0.456749 & 0.000554 & 0.350520 & 30.625301 & \na & 225.004 \\
+Stone & \setcell{$dt=0.03$; gap/$dHat=3.0\mathrm{e}{-4}/9.0\mathrm{e}{-8}$;\\friction $0.5/0.2$; ABD $\kappa=10^{7}$;\\Newton/PCG $10^{-3}/10^{-8}$}
+& 0.103630 & 0.052285 & 0.043721 & 0.010068 & 0.011713 & 0.026766 & 0.248183 & \na & 25.002 \\
+xArm cup & \setcell{$dt=0.005$; gap/$dHat=10^{-3}/10^{-6}$;\\friction $0.2/0.2$; robot/plate/cup ABD\\$\kappa=10^{7}$; Newton/PCG $10^{-3}/10^{-9}$}
+& 2.114877 & 0.269825 & 0.834072 & 0.096478 & 0.183311 & 0.070664 & 3.569227 & \na & 30.001 \\
+xArm end & \setcell{$dt=0.02$; gap/$dHat=1.5\mathrm{e}{-4}/2.25\mathrm{e}{-8}$;\\friction $0.1/0.1$; robot ABD $\kappa=10^{7}$;\\Newton/PCG $5\times10^{-3}/10^{-5}$}
+& 0.869314 & 1.538294 & 0.526055 & 0.088849 & 0.094206 & 0.101086 & 3.217804 & \na & 155.004 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{1.65pt}
+\caption{Five-Fig phase comparison.  Every phase has a DiffIPC and a Unified
+GIPC column; no end-to-end total-time column is included.}
+\label{tab:five-comparison}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{l rr rr rr rr rr rr rr}
+\toprule
+ & \multicolumn{2}{c}{Fwd. linear} & \multicolumn{2}{c}{Fwd. CCD} & \multicolumn{2}{c}{Fwd. Hessian} & \multicolumn{2}{c}{Fwd. LS} & \multicolumn{2}{c}{Bwd. Hessian} & \multicolumn{2}{c}{Bwd. linear} & \multicolumn{2}{c}{Avg. sim.+bwd} & \\
+Case & DiffIPC & Unified & DiffIPC & Unified & DiffIPC & Unified & DiffIPC & Unified & DiffIPC & Unified & DiffIPC & Unified & DiffIPC & Unified & Speedup \\
+\midrule
+Fig.~1 & 3.565824 & 0.708515 & 30.229553 & 0.082882 & 21.349990 & 0.032730 & 3.692838 & 0.020774 & 0.023883 & 0.004335 & 0.543220 & 0.065930 & 59.405308 & 0.915166 & \speed{64.91} \\
+Fig.~10 & 0.016572 & 1.436840 & 0.059063 & 0.003528 & 1.082222 & 0.002826 & 0.055667 & 0.000949 & 0.000147 & 0.001877 & 0.019672 & 1.314336 & 1.233343 & 2.760356 & \speed{0.447} \\
+Fig.~15 & 51.730264 & 3.358900 & 51.148596 & 1.467451 & 195.327071 & 0.683697 & 142.227307 & 0.535019 & 1.284443 & 0.028914 & 10.272933 & 0.150478 & 451.990614 & 6.224459 & \speed{72.62} \\
+Fig.~18 & 1.028713 & 0.032731 & 0.393900 & 0.001474 & 3.456467 & 0.003065 & 1.397733 & 0.001216 & 0.000483 & 0.000184 & 0.053014 & 0.002527 & 6.330310 & 0.041197 & \speed{153.66} \\
+Fig.~21 & 10.577775 & 4.845797 & 254.016860 & 2.159916 & 39.554111 & 0.435139 & 9.242625 & 0.239485 & 0.339537 & 0.011212 & 0.803210 & 0.126737 & 314.534118 & 7.818286 & \speed{40.23} \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+\paragraph{Data notes.}
+The Unified GIPC values and the nine-case wall times are taken from
+\texttt{stage61\_nine\_main\_timing\_profile.md}.  The current DiffIPC Fig.~1
+values are parsed from the latest aligned rerun log.  The Fig.~15, Fig.~18,
+and Fig.~21 values use the accepted-result prefixes of their saved logs.  The
+DiffIPC Fig.~10 phase values come from the earlier 36-record log at
+\texttt{20260825\_original\_settings/fig10/run.log}; the selected 100-step
+dynamic remesh result has no saved per-phase profiler log.  Thus the Fig.~10
+speedup is a phase-level comparison, not a claim about the total wall time of
+the selected 100-step run.  A speedup above one means Unified GIPC is faster;
+the Fig.~10 value below one means that it is slower for this phase profile.
+
+\end{document}

@@ -10,8 +10,11 @@
                 "method": "Backtracking"
             },
             "solver": "L-BFGS",
-            "max_iterations": 100,
-            "grad_norm": 1e-5
+            "L-BFGS": {
+                "history_size": 6
+            },
+            "max_iterations": 20,
+            "grad_norm_tol": 1e-5
         }
     },
     "states": [
@@ -36,7 +39,7 @@
     ],
     "parameters": [
         {
-            "initial": [10, 10],
+            "initial": [8.573763542904631, 10.770988120240851],
             "number": 2
         }
     ],

@@ -22,7 +22,7 @@
             "mesh": "stanford-bunny.obj_.msh",
             "transformation": {
                 "translation": [
-                    1,
+                    1.0,
                     0,
                     0
                 ],
@@ -47,6 +47,7 @@
     "contact": {
         "enabled": true,
         "dhat": 1e-3,
+        "use_convergent_formulation": true,
         "friction_coefficient": 0
     },
     "solver": {
@@ -54,11 +55,20 @@
             "solver": ["Eigen::PardisoLDLT", "Eigen::AccelerateLDLT", "Eigen::SimplicialLDLT"]
         },
         "nonlinear": {
-            "grad_norm" : 1e-6,
+            "solver": "Newton",
+            "norm_type": "Linf",
+            "x_delta_tol": 1.1288825394195845e-5,
+            "grad_norm_tol": 0,
+            "rel_grad_norm_tol": 0,
+            "first_grad_norm_tol": 0,
+            "max_iterations": 2000,
             "line_search": {
                 "use_grad_norm_tol": 1e-4,
                 "method": "Backtracking"
             }
+        },
+        "advanced": {
+            "scale_grad_norm_by_characteristic_length": true
         },
         "contact": {
             "barrier_stiffness": 1e5
@@ -86,7 +96,7 @@
             {
                 "id": 2,
                 "value": [
-                    2,
+                    1.0,
                     0.5,
                     0
                 ]
@@ -94,7 +104,7 @@
         ]
     },
     "materials": {
-        "type": "NeoHookean",
+        "type": "StableNeoHookean",
         "E": 1e6,
         "nu": 0.48,
         "rho": 1240
