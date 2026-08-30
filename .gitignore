@@ -1,3 +1,16 @@
 result/
 *vtu
 *vtm
+
+# Generated optimization outputs and per-run process artifacts.
+/optimization_runs/
+result*/
+polyfem_out/
+opt_state_*/
+*.log
+*.tmp
+
+# Python runtime caches.
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
