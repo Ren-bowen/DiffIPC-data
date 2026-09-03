@@ -1,17 +1,17 @@
 # DiffIPC-data-original 五个 Fig 优化结果（更新）
 
-记录日期：2026-08-25。Fig.1 使用与当前 Unified new-diff-sim 场景对齐后的最新重跑；Fig.10 使用此前完成的 100 次动态仿真+反传结果；Fig.15、Fig.18、Fig.21 沿用 `20260825_original_settings` 中已经保存的有效结果。所有结果均使用本地 `/home/bowen/polyfem/build/PolyFEM_bin` 或 Fig.10 的本地 `polyfempy` 后端。
+记录更新日期：2026-09-03。Fig.1 的 2026-08-31 重跑仍是已保存结果，但其 target 当时抄自 Unified 质心；当前设置改为由 PolyFEM `target.json` 生成，完整优化尚未按新 target 重跑。Fig.10 使用此前完成的 100 次动态仿真+反传结果；Fig.15、Fig.21 沿用 `20260825_original_settings` 中已经保存的有效结果。Fig.18 的旧结果仅作为历史结果保留，因为材料、19 步加载和 ADAM 设置已更新但尚未重跑完整优化。所有结果均使用本地 `/home/bowen/polyfem/build/PolyFEM_bin` 或 Fig.10 的本地 `polyfempy` 后端。
 
 ## Fig.1
 
-- 运行目录：`optimization_runs/20260825_unified_new_diff_sim_fig1/fig1/`
-- 场景：目标平移 `[1, 0, 0]`，初始速度 `[1, 0.5, 0]`；与当前 Unified new-diff-sim Fig.1 脚本一致。
+- 运行目录：`optimization_runs/20260831_unified_current_fig1_target/fig1/`
+- 场景：目标平移 `[1, 0, 0]`，初始速度 `[1, 0.5, 0]`。该次重跑的 target 仍是当时写入 `soft_bound` 的 Unified 质心 `[4.1206334421, 0.1263607470]`。当前仓库设置已改为 `target.json` + `center-target`，不再使用这两个写死数字。
 - 动力学：`dt=0.05`、40 帧、BDF1、物理时间 2.0。
 - 状态：20 次外层更新均已保存；PolyFEM 在保存 `opt_state_0_iter_20` 后因 iteration-limit 异常返回 `134`，因此不把异常退出误记为正常结束。
-- 时间：`2238.227 s`（从 `run.log` 首尾时间戳计算）。
-- loss：初始 `3.17208`，最终 `0.582157`，最低 `0.0938361`（zero-based step `3`）。
-- 最终检查点：`opt_state_0_iter_20`；最终网格有限、无负体积单元。
-- 结果文件：`optimization_runs/20260825_unified_new_diff_sim_fig1/fig1/summary.json`、`run.log`、`loss_history.txt`。
+- 时间：`2252.84 s`（`/usr/bin/time -v` 墙钟时间）。
+- loss：初始 `4.9411173878`，最终 `0.5700637509`，最低 `0.3490623137`（zero-based iteration `7`）。
+- 最终检查点：`opt_state_0_iter_20`；最终网格 2061 点、7562 个四面体，全部有限，负体积和零体积单元均为 0。
+- 结果文件：`optimization_runs/20260831_unified_current_fig1_target/fig1/summary.json`、`run.log`、`runtime.txt`、`loss_history.txt`。
 
 ## Fig.10
 
@@ -37,13 +37,14 @@
 
 ## Fig.18
 
-- 运行目录：`fig18/`
-- 状态：进程正常结束，14 次外层更新。
+- 历史运行目录：`fig18/`（以下数据来自 2026-08-25 旧设置，不是 2026-08-31 新材料/target 设置的结果）。
+- 历史状态：进程正常结束，14 次外层更新。
 - 时间：`117.878 s`
 - loss：`6.86747 → 3.26412e-11`
 - 最终梯度范数：`4.32888e-9`
 - 最终检查点：`fig18/final_opt_iter.txt`，`state=0 iter=14`
 - 结果文件：`fig18/loss_history.txt`、`fig18/loss_curve.png`、`fig18/summary.json`
+- 当前设置：初始 `E=1e6, nu=0.15`，target `E=1e6, nu=0.4`，`+z/-z` cap 位移 `-0.00551/+0.00646`，19 步准静态线性加载；24 个 marker 由 `generate_target.py` 从 PolyFEM `target.json` 写出；外层为 ADAM `alpha=0.15`。完整说明见仓库根目录 `CURRENT_SETTINGS_20260825.md`。
 
 ## Fig.21
 

@@ -82,14 +82,14 @@
     "materials": {
         "type": "StableNeoHookean",
         "E": 1e6,
-        "nu": 0.15,
+        "nu": 0.4,
         "rho": 1000.0
     },
     "output": {
         "log": {
             "level": "info"
         },
-        "directory": "result",
+        "directory": "result-target",
         "paraview": {
             "file_name": "sim.pvd",
             "high_order_mesh": false,

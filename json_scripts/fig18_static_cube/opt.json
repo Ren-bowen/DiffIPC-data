@@ -7,14 +7,19 @@
     "solver": {
         "nonlinear": {
             "line_search": {
-                "method": "Backtracking"
+                "method": "None",
+                "min_step_size": 1
             },
-            "solver": "L-BFGS",
-            "L-BFGS": {
-                "history_size": 6
+            "solver": "ADAM",
+            "ADAM": {
+                "alpha": 0.15
             },
             "max_iterations": 20,
-            "grad_norm_tol": 1e-5
+            "allow_out_of_iterations": true,
+            "grad_norm_tol": 1e-8,
+            "advanced": {
+                "apply_gradient_fd": "None"
+            }
         }
     },
     "states": [
@@ -31,6 +36,9 @@
                     "type": "exp"
                 },
                 {
+                    "type": "stable-nh-v1-to-legacy"
+                },
+                {
                     "type": "per-body-to-per-elem",
                     "state": 0
                 }
@@ -39,16 +47,22 @@
     ],
     "parameters": [
         {
-            "initial": [8.573763542904631, 10.770988120240851],
+            "initial": [12.135348811191877, 12.98260143502911],
             "number": 2
         }
     ],
     "functionals": [
         {
-            "type": "node-target",
+            "type": "transient_integral",
             "state": 0,
-            "target_data_path": "data.txt",
-            "weight": 1e5
+            "weight": 1,
+            "integral_type": "final",
+            "static_objective": {
+                "type": "node-target",
+                "state": 0,
+                "target_data_path": "data.txt",
+                "weight": 1e5
+            }
         }
     ]
 }

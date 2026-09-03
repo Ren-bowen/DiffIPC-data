@@ -1,0 +1,18 @@
+{
+  "source": "polyfem_forward_target_json",
+  "target_json": "target.json",
+  "last_frame": "result-target/step_40.vtu",
+  "yellow_body_id": 3,
+  "xz_centroid": [
+    3.9743406348577177,
+    0.4190920289159835
+  ],
+  "unified_hardcoded_xz_not_used": [
+    4.1206334421,
+    0.126360747
+  ],
+  "delta_vs_unified_hardcoded": [
+    -0.14629280724228222,
+    0.2927312819159835
+  ]
+}
