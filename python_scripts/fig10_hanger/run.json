@@ -53,7 +53,7 @@
                 "reg_weight_inc": 10
             },
             "norm_type": "Linf",
-            "x_delta_tol": 5.418868648275823e-4,
+            "x_delta_tol": 2e-5,
             "grad_norm_tol": 0,
             "rel_grad_norm_tol": 0,
             "first_grad_norm_tol": 0,

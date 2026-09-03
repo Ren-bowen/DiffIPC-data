@@ -371,17 +371,12 @@ def configure_material_and_solver(config: dict, max_threads: int = 16) -> None:
     ] = True
     nonlinear = solver_cfg.setdefault("nonlinear", {})
     nonlinear["solver"] = "Newton"
-    # The pinned PolySolve schema uses x_delta/grad_norm. It does not expose
-    # norm_type, so its backend movement norm remains L2.
-    for key in ("norm_type", "x_delta_tol", "grad_norm_tol", "rel_grad_norm_tol"):
+    for key in ("x_delta", "grad_norm"):
         nonlinear.pop(key, None)
-    nonlinear["x_delta"] = 0
-    nonlinear["grad_norm"] = 0
+    nonlinear["grad_norm_tol"] = 0
+    nonlinear["rel_grad_norm_tol"] = 0
     nonlinear["first_grad_norm_tol"] = 0
     nonlinear.setdefault("line_search", {})["method"] = "Backtracking"
-    # Do not override PolySolve's Newton strategy, PSD, or regularization
-    # options.  Keeping the Newton block absent uses the reference defaults.
-    nonlinear.pop("Newton", None)
 
     # These are top-level contact settings in PolyFEM. The nested solver
     # object accepts solver/contact options such as barrier_stiffness only.
@@ -401,32 +396,35 @@ def configure_newton_stopping(
     newton_dt: float,
     bbox_diag: float,
 ) -> float:
-    """Set PolyFEM's movement tolerance to GIPC's backend threshold.
+    """Set PolyFEM's Linf movement tolerance to Unified's threshold.
 
-    GIPC tests ``||dx||_inf < Newton_solver_threshold * IPC_dt * bboxDiag``.
-    Use that bbox-scaled physical displacement directly as PolySolve's
-    movement tolerance. PolyFEM's first-direction stopping semantics may
-    differ, but the numerical tolerance itself must not be silently changed.
+    Unified tests ``||dx||_inf < Newton_solver_threshold * IPC_dt * bboxDiag``.
+    After PolyFEM #444, Linf compares ``x_delta_tol * bboxDiag``, so the
+    matching JSON value is the dimensionless ``threshold * dt``.
     """
     if bbox_diag <= 0.0 or not np.isfinite(bbox_diag):
         raise ValueError(f"bbox_diag must be positive and finite, got {bbox_diag}")
     nonlinear = config["solver"]["nonlinear"]
-    gipc_x_delta = float(newton_threshold * newton_dt * bbox_diag)
-    x_delta = max(gipc_x_delta, 1e-12)
-    nonlinear["x_delta"] = x_delta
-    nonlinear["grad_norm"] = 0
+    x_delta_tol = float(newton_threshold * newton_dt)
+    nonlinear["norm_type"] = "Linf"
+    nonlinear["x_delta_tol"] = x_delta_tol
+    nonlinear.pop("x_delta", None)
+    nonlinear["grad_norm_tol"] = 0
+    nonlinear["rel_grad_norm_tol"] = 0
     nonlinear["first_grad_norm_tol"] = 0
-    return x_delta
+    nonlinear.pop("grad_norm", None)
+    return x_delta_tol
 
 
 def print_newton_stopping(solver, newton_threshold, newton_dt, prefix="  "):
     vertices = np.asarray(solver.mesh().vertices(), dtype=np.float64)
     bbox_diag = float(np.linalg.norm(vertices.max(axis=0) - vertices.min(axis=0)))
-    x_delta = newton_threshold * newton_dt * bbox_diag
+    x_delta_tol = newton_threshold * newton_dt
     print(
-        f"{prefix}Newton stopping: norm=L2  threshold={newton_threshold:.6e}  "
+        f"{prefix}Newton stopping: norm=Linf  threshold={newton_threshold:.6e}  "
         f"GIPC_dt={newton_dt:.6e}  bboxDiag={bbox_diag:.6e}  "
-        f"gipc_x_delta={x_delta:.6e}  polyfem_x_delta={x_delta:.6e}"
+        f"x_delta_tol={x_delta_tol:.6e}  effective=x_delta_tol*bbox="
+        f"{x_delta_tol * bbox_diag:.6e}"
     )
 
 
@@ -900,6 +898,11 @@ def main():
         action="store_true",
         help="Skip per-iteration VTU export to reduce runtime and disk I/O.",
     )
+    parser.add_argument(
+        "--eval-init-loss",
+        action="store_true",
+        help="Evaluate the initial stress+Laplacian loss and exit.",
+    )
     parser.add_argument("--stress-power", type=int, default=2)
     parser.add_argument("--quality-threshold", type=float, default=1e-2,
                         help="remesh if min tet quality < threshold (GIPC default 1e-2)")
@@ -1040,6 +1043,47 @@ def main():
             laplacian_weight=args.laplacian_weight,
         )
         print("verify_grad finished.")
+        return
+
+    if args.eval_init_loss:
+        tets = mesh.elements()
+        surf_faces_np = extract_surface_faces(tets).astype(np.int64)
+        verts_tensor = torch.tensor(v0, requires_grad=False)
+        solutions = Simulate.apply(
+            solver,
+            verts_tensor,
+            torch.as_tensor(gipc_case13_design_mask(v0, fixed_mask), dtype=torch.bool),
+        )
+        tet_mask = torch.as_tensor(
+            gipc_case13_loss_tet_mask(v0, tets, soft_n),
+            dtype=torch.bool,
+        )
+        deformed_tensor = verts_tensor + solutions.reshape_as(verts_tensor)
+        loss_stress = stable_nh_stress_norm_loss(
+            deformed_tensor,
+            verts_tensor,
+            torch.as_tensor(tets, dtype=torch.long),
+            args.stress_power,
+            tet_mask,
+        )
+        lap_faces_np, lap_boundary_ids_np = gipc_case13_laplacian_surface(
+            v0, surf_faces_np, soft_n
+        )
+        lap_raw = verts_tensor.new_zeros(())
+        if args.laplacian_weight > 0.0 and lap_faces_np.size > 0:
+            lap_raw = laplacian_loss_torch(
+                verts_tensor,
+                torch.as_tensor(lap_faces_np, dtype=torch.long),
+                boundary_vertex_ids=torch.as_tensor(
+                    lap_boundary_ids_np, dtype=torch.long
+                ),
+            )
+        loss = loss_stress + args.laplacian_weight * lap_raw
+        print(
+            f"INIT_LOSS {float(loss):.17g} "
+            f"stress={float(loss_stress):.17g} "
+            f"laplacian={float(args.laplacian_weight * lap_raw):.17g}"
+        )
         return
 
     out_dir = args.output_dir

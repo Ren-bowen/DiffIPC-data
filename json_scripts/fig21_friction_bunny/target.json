@@ -39,10 +39,15 @@
             "solver": ["Eigen::PardisoLDLT", "Eigen::AccelerateLDLT", "Eigen::SimplicialLDLT"]
         },
         "nonlinear": {
+            "solver": "Newton",
+            "norm_type": "Linf",
+            "x_delta_tol": 5e-5,
+            "grad_norm_tol": 0,
+            "rel_grad_norm_tol": 0,
+            "first_grad_norm_tol": 0,
             "line_search": {
                 "method": "Backtracking"
-            },
-            "grad_norm_tol": 1e-3
+            }
         },
         "advanced": {
             "scale_grad_norm_by_characteristic_length": true

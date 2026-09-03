@@ -60,7 +60,7 @@
                 "type": "node-target",
                 "state": 0,
                 "target_data_path": "data.txt",
-                "weight": 1e5
+                "weight": 5e4
             }
         }
     ]

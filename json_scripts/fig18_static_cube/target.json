@@ -43,7 +43,7 @@
         "nonlinear": {
             "solver": "Newton",
             "norm_type": "Linf",
-            "x_delta_tol": 6.92820323027551e-11,
+            "x_delta_tol": 1e-6,
             "grad_norm_tol": 0,
             "rel_grad_norm_tol": 0,
             "first_grad_norm_tol": 0,
