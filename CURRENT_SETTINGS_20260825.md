@@ -130,6 +130,30 @@ these new settings. Run the JSON files with
 other DiffIPC opt JSON files whose functional objects are not listed in
 the root opt spec.
 
+## Fig.21
+
+Configuration files:
+
+- `json_scripts/fig21_friction_bunny/run-new.json`
+- `json_scripts/fig21_friction_bunny/target.json`
+- `json_scripts/fig21_friction_bunny/opt.json`
+
+The scene matches the numbered Unified Fig.21 entry point
+`/home/bowen/Unified_GIPC/python_examples/diff_sim/5_fig21_bunny_friction_rate/main.py`:
+40 Implicit Euler frames, `dt=0.05`, bunny scale 4, initial velocity
+`[0, 0, 2]`, design friction `0.5`, target friction `0.1`,
+`E=1e5`, `nu=0.48`, `rho=1000`, `dHat=1e-3`. The objective is now the
+same last-frame volume-weighted bunny Z-centroid loss used by Unified:
+`center-target` on `volume_selection=[1]`, `normalize=true`,
+`active_dimension=[false, false, true]`, weight `100`. The previous
+JSON omitted both `normalize` and `active_dimension`, so it compared
+unnormalized XYZ position integrals instead of `100 * (z - z_target)^2`.
+
+The outer optimizer remains PolyFEM L-BFGS with 5 iterations and
+`grad_norm_tol=1e-4`. Unified additionally clamps friction to `[0, 1]`
+with `max_change=0.2` after each accepted step; that box is still
+enforced only on the Unified side.
+
 ## Other saved comparison settings
 
 The current edits to the comparison settings are also preserved in:
@@ -139,6 +163,7 @@ The current edits to the comparison settings are also preserved in:
 - `json_scripts/fig15_tentacles/state-target.json`
 - `json_scripts/fig21_friction_bunny/run-new.json`
 - `json_scripts/fig21_friction_bunny/target.json`
+- `json_scripts/fig21_friction_bunny/opt.json`
 
 ## Timing documents
 

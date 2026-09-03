@@ -43,12 +43,14 @@
             "state": 0,
             "weight": 100,
             "integral_type": "final",
-            "static_objective": 
+            "static_objective":
             {
                 "type": "center-target",
                 "state": 0,
                 "target_state": 1,
-                "volume_selection": [1]
+                "volume_selection": [1],
+                "active_dimension": [false, false, true],
+                "normalize": true
             }
         }
     ],
