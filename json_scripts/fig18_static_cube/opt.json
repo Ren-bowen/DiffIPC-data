@@ -7,8 +7,7 @@
     "solver": {
         "nonlinear": {
             "line_search": {
-                "method": "None",
-                "min_step_size": 1
+                "method": "None"
             },
             "solver": "ADAM",
             "ADAM": {

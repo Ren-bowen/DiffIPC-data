@@ -44,7 +44,7 @@
 - 最终梯度范数：`4.32888e-9`
 - 最终检查点：`fig18/final_opt_iter.txt`，`state=0 iter=14`
 - 结果文件：`fig18/loss_history.txt`、`fig18/loss_curve.png`、`fig18/summary.json`
-- 当前设置：初始 `E=1e6, nu=0.15`，target `E=1e6, nu=0.4`，`+z/-z` cap 位移 `-0.00551/+0.00646`，19 步准静态线性加载；24 个 marker 由 `generate_target.py` 从 PolyFEM `target.json` 写出；外层为 ADAM `alpha=0.15`。完整说明见仓库根目录 `CURRENT_SETTINGS_20260825.md`。
+- 当前设置：初始 `E=1e6, nu=0.15`，target `E=1e6, nu=0.4`，`+z/-z` cap 位移 `-0.00551/+0.00646`，19 步准静态线性加载；24 个 marker 由 `generate_target.py` 从 PolyFEM `target.json` 写出；外层为 ADAM `alpha=0.15`。准静态材料伴随的 NaN 已在 PolyFEM `ada5f8f92` 修好；冒烟梯度为有限值 `[-4723.39, 4723.39]`。完整 20 步优化尚未按新设置重跑。完整说明见仓库根目录 `CURRENT_SETTINGS_20260825.md`。
 
 ## Fig.21
 

@@ -95,11 +95,14 @@ applied as a 19-step quasistatic linear ramp (`t0=0`, `tend=1`,
 same 24 Unified +X-face markers to `data.txt`.
 
 The outer optimizer is PolyFEM ADAM with `alpha=0.15`, no line search, 20
-iterations, and `allow_out_of_iterations`. Because `node-target` as a static
-form would read time step 0, it is wrapped in `transient_integral` with
-`integral_type=final`. Unified also clamps `log(lambda), log(mu)` to
-`[4, 16]`; PolyFEM ADAM does not project onto that box, but `exp` still
-keeps the Lamé parameters positive.
+iterations, and `allow_out_of_iterations`. Do not set
+`line_search.min_step_size=1`: polysolve treats `step_size <= min_step_size`
+as failure, so ADAM immediately falls back to a unit GradientDescent step
+along the raw adjoint gradient and the next forward solve becomes NaN.
+Because `node-target` as a static form would read time step 0, it is wrapped
+in `transient_integral` with `integral_type=final`. Unified also clamps
+`log(lambda), log(mu)` to `[4, 16]`; PolyFEM ADAM does not project onto that
+box, but `exp` still keeps the Lamé parameters positive.
 
 Unified Stable-NH v1 consumes rates `length=mu` and `volume=lambda+mu`, while
 the legacy PolyFEM StableNeoHookean implementation uses different internal
@@ -111,13 +114,21 @@ variables remain physical `log(lambda), log(mu)`; their initial values for
 
 A smoke run parsed `opt.json` with `--no_strict_validation`, completed the
 19-step quasistatic forward solve, and evaluated a finite marker objective
-`12.417`. The current PolyFEM material adjoint for quasistatic incremental
-loading returns a NaN gradient, so a new full 20-step optimization was not
-completed. The old saved Fig.18 result is historical and must not be
-interpreted as a result produced by these new settings. Run the JSON files
-with `PolyFEM_bin --no_strict_validation`; that flag is also required by
-the other DiffIPC opt JSON files whose functional objects are not listed
-in the root opt spec.
+`12.417`. The NaN gradient that appeared after switching Fig.18 from a
+one-shot static solve to 19-step quasistatic loading was a PolyFEM adjoint
+bug, not a JSON-setup error: `solve_transient_adjoint` called
+`BDF::betas(bdf_order-1)` while quasistatic caching left `bdf_order=0`,
+and the material term used the inertial `beta*dt` scaling. The fix is in
+`/home/bowen/polyfem` commit `ada5f8f92` on
+`cursor/quasistatic-adjoint-nan-ff22` (`solve_quasistatic_adjoint` plus a
+static material adjoint per step). After that rebuild the same smoke
+reports a finite gradient `[-4723.394310645969, 4723.394310480535]`. A new
+full 20-step optimization has not been completed. The old saved Fig.18
+result is historical and must not be interpreted as a result produced by
+these new settings. Run the JSON files with
+`PolyFEM_bin --no_strict_validation`; that flag is also required by the
+other DiffIPC opt JSON files whose functional objects are not listed in
+the root opt spec.
 
 ## Other saved comparison settings
 
