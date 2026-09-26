@@ -1,0 +1,85 @@
+diff --git a/nonlinear-solver-spec.json b/nonlinear-solver-spec.json
+index fc1ff34..0a559fd 100644
+--- a/nonlinear-solver-spec.json
++++ b/nonlinear-solver-spec.json
+@@ -5,6 +5,7 @@
+         "optional": [
+             "solver",
+             "x_delta",
++            "x_delta_linf_absolute_tol",
+             "grad_norm",
+             "first_grad_norm_tol",
+             "max_iterations",
+@@ -47,6 +48,13 @@
+         "min": 0,
+         "doc": "Stopping criterion: minimal change of the variables x for the iterations to continue. Computed as the L2 norm of x divide by the time step."
+     },
++    {
++        "pointer": "/x_delta_linf_absolute_tol",
++        "default": 0,
++        "type": "float",
++        "min": 0,
++        "doc": "Opt-in absolute Linf tolerance for the unscaled direction before line search. Overrides x_delta without characteristic-length or objective normalization. Zero preserves legacy L2 behavior."
++    },
+     {
+         "pointer": "/grad_norm",
+         "default": 1e-08,
+@@ -737,4 +745,4 @@
+         "type": "float",
+         "doc": "Expensive Option: Eps for finite difference to verify gradient of energy."
+     }
+-]
+\ No newline at end of file
++]
+diff --git a/src/polysolve/nonlinear/Solver.cpp b/src/polysolve/nonlinear/Solver.cpp
+index d16f8dc..cc74c25 100644
+--- a/src/polysolve/nonlinear/Solver.cpp
++++ b/src/polysolve/nonlinear/Solver.cpp
+@@ -210,6 +210,15 @@ namespace polysolve::nonlinear
+         m_stop.fDelta *= characteristic_length;
+         m_stop.gradNorm *= characteristic_length;
+         m_stop.firstGradNorm *= characteristic_length;
++        const double absolute_linf_tol = solver_params.value("x_delta_linf_absolute_tol", 0.0);
++        if (!std::isfinite(absolute_linf_tol) || absolute_linf_tol < 0)
++            log_and_throw_error(m_logger, "x_delta_linf_absolute_tol must be finite and nonnegative");
++        m_absolute_linf_direction = absolute_linf_tol > 0;
++        if (m_absolute_linf_direction)
++        {
++            m_stop.xDelta = absolute_linf_tol;
++            m_logger.info("Newton direction stopping: Linf absolute tolerance={:.17g} (before line search; no characteristic-length scaling)", m_stop.xDelta);
++        }
+         // m_stop.xDeltaDotGrad *= characteristic_length;
+ 
+         m_stop.iterations = solver_params["max_iterations"];
+@@ -338,7 +347,8 @@ namespace polysolve::nonlinear
+                 update_direction_successful = compute_update_direction(objFunc, x, grad, delta_x);
+             }
+ 
+-            m_current.xDelta = delta_x.norm();
++            m_current.xDelta = m_absolute_linf_direction
++                ? delta_x.lpNorm<Eigen::Infinity>() : delta_x.norm();
+             if (!update_direction_successful || std::isnan(m_current.xDelta))
+             {
+                 const auto current_name = descent_strategy_name();
+@@ -497,7 +507,8 @@ namespace polysolve::nonlinear
+             log_and_throw_error(m_logger, "[{}][{}] Failed to find minimizer", descent_strategy_name(), m_line_search->name());
+ 
+         double tot_time = stop_watch.getElapsedTimeInSec();
+-        const bool succeeded = m_status == Status::GradNormTolerance;
++        const bool succeeded = m_status == Status::GradNormTolerance
++            || (m_absolute_linf_direction && m_status == Status::XDeltaTolerance);
+         m_logger.log(
+             succeeded ? spdlog::level::info : spdlog::level::err,
+             "[{}][{}] Finished: {} took {:g}s ({}) (stopping criteria: {})",
+diff --git a/src/polysolve/nonlinear/Solver.hpp b/src/polysolve/nonlinear/Solver.hpp
+index 211ea98..6c234f1 100644
+--- a/src/polysolve/nonlinear/Solver.hpp
++++ b/src/polysolve/nonlinear/Solver.hpp
+@@ -104,6 +104,7 @@ namespace polysolve::nonlinear
+ 
+         /// @brief Stopping criteria
+         Criteria m_stop;
++        bool m_absolute_linf_direction = false;
+ 
+         /// @brief Current criteria
+         Criteria m_current;

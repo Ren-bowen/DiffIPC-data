@@ -3,28 +3,49 @@
         {
             "type": "friction",
             "state": 0,
-            "composition": [{
-                "type": "scale",
-                "value": 1
-            }]
+            "composition": [
+                {
+                    "type": "clamp",
+                    "lower": [
+                        0
+                    ],
+                    "upper": [
+                        1
+                    ]
+                },
+                {
+                    "type": "scale",
+                    "value": 1
+                }
+            ]
         }
     ],
     "solver": {
         "advanced": {
-            "solve_in_parallel": true
+            "solve_in_parallel": false
         },
         "nonlinear": {
             "line_search": {
-                "method": "Backtracking"
+                "method": "Backtracking",
+                "default_init_step_size": 0.01,
+                "max_step_size_iter": 5,
+                "max_step_size_iter_final": 5,
+                "accept_last_on_failure": true
             },
-            "solver": "L-BFGS",
+            "solver": [
+                {
+                    "type": "GradientDescent"
+                }
+            ],
             "max_iterations": 5,
-            "grad_norm_tol": 1e-4,
+            "allow_out_of_iterations": true,
+            "grad_norm_tol": 0.0001,
             "advanced": {
                 "apply_gradient_fd": "None",
-                "gradient_fd_eps": 1e-5
+                "gradient_fd_eps": 1e-05
             }
-        }
+        },
+        "max_threads": 32
     },
     "output": {
         "log": {
@@ -34,7 +55,9 @@
     "parameters": [
         {
             "number": 1,
-            "initial": [0.5]
+            "initial": [
+                0.5
+            ]
         }
     ],
     "functionals": [
@@ -43,13 +66,18 @@
             "state": 0,
             "weight": 100,
             "integral_type": "final",
-            "static_objective":
-            {
+            "static_objective": {
                 "type": "center-target",
                 "state": 0,
                 "target_state": 1,
-                "volume_selection": [1],
-                "active_dimension": [false, false, true],
+                "volume_selection": [
+                    1
+                ],
+                "active_dimension": [
+                    false,
+                    false,
+                    true
+                ],
                 "normalize": true
             }
         }
@@ -61,5 +89,15 @@
         {
             "path": "target.json"
         }
-    ]
+    ],
+    "parameter_clip": {
+        "lower": [
+            0
+        ],
+        "upper": [
+            1
+        ],
+        "max_change": 0.1,
+        "before_line_search": true
+    }
 }

@@ -1,86 +1,135 @@
 {
-    "variable_to_simulation": [
+  "variable_to_simulation": [
+    {
+      "type": "initial",
+      "state": 0,
+      "composition": [
         {
-            "type": "initial",
-            "state": 0,
-            "composition": [{
-                "type": "append-const",
-                "value": 0,
-                "size": 3,
-                "start": 0
-            }, {
-                "type": "append-const",
-                "value": 0,
-                "size": 3,
-                "start": 6
-            }, {
-                "type": "per-body-to-per-node",
-                "state": 0
-            }, {
-                "type": "append-const",
-                "value": 0,
-                "size": 6183,
-                "start": 0
-            }]
-        }
-    ],
-    "solver": {
-        "max_threads": 16,
-        "nonlinear": {
-            "line_search": {
-                "min_step_size": 1,
-                "method": "None"
-            },
-            "solver": "L-BFGS-B",
-            "L-BFGS-B": {
-                "history_size": 6
-            },
-            "box_constraints": {
-                "max_change": 0.5,
-                "bounds": [-5, 5]
-            },
-            "max_iterations": 20,
-            "allow_out_of_iterations": true,
-            "grad_norm_tol": 1e-3,
-            "advanced": {
-                "apply_gradient_fd": "None",
-                "gradient_fd_eps": 1e-5
-            }
-        }
-    },
-    "output": {
-        "log": {
-            "level": "trace"
-        }
-    },
-    "parameters": [
-        {
-            "number": 3,
-            "initial": [1.0, 0.5, 0.0]
-        }
-    ],
-    "functionals": [
-        {
-            "type": "transient_integral",
-            "state": 0,
-            "weight": 1,
-            "integral_type": "final",
-            "static_objective": {
-                "type": "center-target",
-                "state": 0,
-                "target_state": 1,
-                "volume_selection": [3],
-                "active_dimension": [true, false, true],
-                "normalize": true
-            }
-        }
-    ],
-    "states": [
-        {
-            "path": "run.json"
+          "type": "clamp",
+          "lower": [
+            -5,
+            -5,
+            -5
+          ],
+          "upper": [
+            5,
+            5,
+            5
+          ]
         },
         {
-            "path": "target.json"
+          "type": "append-const",
+          "value": 0,
+          "size": 3,
+          "start": 0
+        },
+        {
+          "type": "append-const",
+          "value": 0,
+          "size": 3,
+          "start": 6
+        },
+        {
+          "type": "per-body-to-per-node",
+          "state": 0
+        },
+        {
+          "type": "append-const",
+          "value": 0,
+          "size": 6183,
+          "start": 0
         }
-    ]
+      ]
+    }
+  ],
+  "solver": {
+    "max_threads": 32,
+    "nonlinear": {
+      "line_search": {
+        "method": "Backtracking",
+        "default_init_step_size": 1.0,
+        "step_ratio": 0.5,
+        "max_step_size_iter": 4,
+        "max_step_size_iter_final": 4,
+        "accept_last_on_failure": true,
+        "min_step_size": 1e-10,
+        "min_step_size_final": 1e-10,
+        "use_grad_norm_tol": 0.0
+      },
+      "solver": [
+        {
+          "type": "GradientDescent"
+        }
+      ],
+      "max_iterations": 10,
+      "allow_out_of_iterations": true,
+      "grad_norm_tol": 0.001,
+      "advanced": {
+        "apply_gradient_fd": "None",
+        "gradient_fd_eps": 1e-05
+      }
+    },
+    "advanced": {
+      "solve_in_parallel": false
+    }
+  },
+  "output": {
+    "log": {
+      "level": "trace"
+    }
+  },
+  "parameters": [
+    {
+      "number": 3,
+      "initial": [
+        2.0,
+        0.5,
+        0.0
+      ]
+    }
+  ],
+  "functionals": [
+    {
+      "type": "transient_integral",
+      "state": 0,
+      "weight": 1,
+      "integral_type": "final",
+      "static_objective": {
+        "type": "center-target",
+        "state": 0,
+        "target_state": 1,
+        "volume_selection": [
+          3
+        ],
+        "active_dimension": [
+          true,
+          false,
+          true
+        ],
+        "normalize": true
+      }
+    }
+  ],
+  "states": [
+    {
+      "path": "run.json"
+    },
+    {
+      "path": "target.json"
+    }
+  ],
+  "parameter_clip": {
+    "lower": [
+      -5,
+      -5,
+      -5
+    ],
+    "upper": [
+      5,
+      5,
+      5
+    ],
+    "max_change": 10,
+    "before_line_search": true
+  }
 }

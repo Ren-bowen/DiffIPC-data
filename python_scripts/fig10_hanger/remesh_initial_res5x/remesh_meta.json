@@ -1,0 +1,19 @@
+{
+  "source": "/home/bowen/DiffIPC-data-original/python_scripts/fig10_hanger/middle_cleaned.mesh",
+  "output": "/home/bowen/DiffIPC-data-original/python_scripts/fig10_hanger/middle_cleaned_res5x.msh",
+  "ftetwild_after": "/home/bowen/DiffIPC-data-original/python_scripts/fig10_hanger/remesh_initial_res5x/ftetwild_after_r000_try1.msh",
+  "target_la": 0.035388307704147845,
+  "resolution_factor_elements": 5.0,
+  "input_vertices": 2080,
+  "input_tets": 7593,
+  "output_vertices": 8172,
+  "output_tets": 35843,
+  "output_quality": {
+    "min": 0.18325605276156298,
+    "p01": 0.3169960136267773,
+    "p05": 0.3883578634565894,
+    "median": 0.6178563723631446
+  },
+  "tet_ratio": 4.720532069010931,
+  "vertex_ratio": 3.9288461538461537
+}

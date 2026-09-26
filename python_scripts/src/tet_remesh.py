@@ -3,7 +3,7 @@
 The legacy script keeps its PolyFEM solver, but its remesh command and output
 validation intentionally follow ``Unified_GIPC_new_diff``'s
 ``2_fig10_hanger_rest_shape/fig10_remesh.py``: absolute target edge length
-``--la 0.05``, ASCII Gmsh output, and acceptance of any finite, non-degenerate
+``--la 0.035388307704147845``, ASCII Gmsh output, and acceptance of any finite, non-degenerate
 tetrahedral result instead of rejecting a valid output solely because its
 minimum quality is below the optimization trigger threshold.
 """
@@ -46,7 +46,8 @@ from remesh_utils import (  # noqa: E402
     tet_quality_stats_from_mesh,
 )
 
-DEFAULT_FTETWILD_LA = 5.0e-2
+# Same target resolution as the current initial res5x mesh.
+DEFAULT_FTETWILD_LA = 0.035388307704147845
 
 __all__ = [
     "boundary_triangle_quality_stats",
@@ -194,6 +195,8 @@ def run_remesh(
     )
     if not has_length:
         options.extend(["--la", f"{DEFAULT_FTETWILD_LA:.8e}"])
+    if not any(token == "--max-threads" or token.startswith("--max-threads=") for token in options):
+        options.extend(["--max-threads", "16"])
     if "--no-binary" not in options:
         options.append("--no-binary")
 

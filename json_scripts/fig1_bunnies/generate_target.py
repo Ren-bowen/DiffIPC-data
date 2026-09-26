@@ -5,7 +5,7 @@ This script is the source of the Fig.1 target. It does not copy a Unified
 centroid. It:
 
 1. Runs ``target.json`` (same setup as ``run.json``, but the moving bunny
-   starts at ``v0 = [3, 0.5, 0]``).
+   starts at ``v0 = [3.6, 0.5, 0]``).
 2. Reads the last frame and reports the yellow bunny (body 3) volume-
    weighted XZ centroid for inspection.
 3. Leaves ``result-target/`` in place so ``opt.json`` can use
@@ -48,9 +48,9 @@ def run_target(skip_solve: bool) -> None:
     if not POLYFEM_BIN.is_file():
         raise FileNotFoundError(f"PolyFEM_bin not found: {POLYFEM_BIN}")
     RESULT_DIR.mkdir(parents=True, exist_ok=True)
-    cmd = [str(POLYFEM_BIN), "-j", str(TARGET_JSON)]
+    cmd = [str(POLYFEM_BIN), "-j", str(TARGET_JSON), "--max_threads", "32"]
     print("Running:", " ".join(cmd), flush=True)
-    subprocess.run(cmd, cwd=HERE, check=True)
+    subprocess.run(cmd, cwd=HERE, check=True, env=dict(os.environ, OMP_NUM_THREADS="32", MKL_NUM_THREADS="32", OPENBLAS_NUM_THREADS="32", MKL_DYNAMIC="FALSE"))
 
 
 def tet_volume_weighted_xz(points: np.ndarray, cells: np.ndarray) -> np.ndarray:

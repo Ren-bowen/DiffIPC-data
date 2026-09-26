@@ -1,104 +1,131 @@
 {
-    "geometry": [
+  "geometry": [
+    {
+      "mesh": "grid2.msh",
+      "transformation": {
+        "translation": [
+          -0.02,
+          -0.02,
+          -0.02
+        ],
+        "scale": 0.004
+      },
+      "surface_selection": [
         {
-            "mesh": "grid2.msh",
-            "transformation": {
-                "translation": [
-                    -0.02,
-                    -0.02,
-                    -0.02
-                ],
-                "scale": 0.004
-            },
-            "surface_selection": [
-                {
-                    "id": 2,
-                    "axis": "z",
-                    "position": 0.0199
-                },
-                {
-                    "id": 3,
-                    "axis": "-z",
-                    "position": -0.0199
-                }
-            ]
-        }
-    ],
-    "space": {
-        "discr_order": 1,
-        "advanced": {
-            "quadrature_order": 5
-        }
-    },
-    "time": {
-        "t0": 0,
-        "tend": 1,
-        "time_steps": 19,
-        "quasistatic": true
-    },
-    "solver": {
-        "linear": {
-            "solver": ["Eigen::PardisoLDLT", "Eigen::AccelerateLDLT", "Eigen::SimplicialLDLT"]
+          "id": 2,
+          "axis": "z",
+          "position": 0.0199
         },
-        "nonlinear": {
-            "solver": "Newton",
-            "norm_type": "Linf",
-            "x_delta_tol": 1e-6,
-            "grad_norm_tol": 0,
-            "rel_grad_norm_tol": 0,
-            "first_grad_norm_tol": 0,
-            "max_iterations": 2000
-        },
-        "advanced": {
-            "scale_grad_norm_by_characteristic_length": true
+        {
+          "id": 3,
+          "axis": "-z",
+          "position": -0.0199
         }
-    },
-    "boundary_conditions": {
-        "dirichlet_boundary": [
-            {
-                "id": 2,
-                "value": [
-                    0,
-                    0,
-                    -0.00551
-                ],
-                "interpolation": {
-                    "type": "linear"
-                }
-            },
-            {
-                "id": 3,
-                "value": [
-                    0,
-                    0,
-                    0.00646
-                ],
-                "interpolation": {
-                    "type": "linear"
-                }
-            }
-        ]
-    },
-    "materials": {
-        "type": "StableNeoHookean",
-        "E": 1e6,
-        "nu": 0.15,
-        "rho": 1000.0
-    },
-    "output": {
-        "log": {
-            "level": "info"
-        },
-        "directory": "result",
-        "paraview": {
-            "file_name": "sim.pvd",
-            "high_order_mesh": false,
-            "volume": true,
-            "surface": true,
-            "vismesh_rel_area": 1
-        },
-        "advanced": {
-            "save_time_sequence": true
-        }
+      ]
     }
+  ],
+  "space": {
+    "discr_order": 1,
+    "advanced": {
+      "quadrature_order": 1
+    }
+  },
+  "time": {
+    "t0": 0,
+    "tend": 1,
+    "time_steps": 10,
+    "quasistatic": false
+  },
+  "contact": {
+    "enabled": true,
+    "dhat": 6.92820323027551e-05,
+    "use_convergent_formulation": true,
+    "friction_coefficient": 0
+  },
+  "solver": {
+    "linear": {
+      "solver": [
+        "Eigen::PardisoLDLT",
+        "Eigen::AccelerateLDLT",
+        "Eigen::SimplicialLDLT"
+      ]
+    },
+    "nonlinear": {
+      "solver": "Newton",
+      "norm_type": "Linf",
+      "x_delta_tol": 0.001,
+      "grad_norm_tol": 0,
+      "rel_grad_norm_tol": 0,
+      "first_grad_norm_tol": 0,
+      "max_iterations": 2000,
+      "line_search": {
+        "method": "Backtracking",
+        "use_grad_norm_tol": 0.0,
+        "default_init_step_size": 1.0,
+        "step_ratio": 0.5
+      },
+      "Newton": {
+        "force_psd_projection": true,
+        "use_psd_projection": true
+      }
+    },
+    "advanced": {
+      "scale_grad_norm_by_characteristic_length": true
+    },
+    "contact": {
+      "CCD": {
+        "broad_phase": "bvh"
+      },
+      "barrier_stiffness": 1.0
+    },
+    "max_threads": 32
+  },
+  "boundary_conditions": {
+    "dirichlet_boundary": [
+      {
+        "id": 2,
+        "value": [
+          0,
+          0,
+          -0.00551
+        ],
+        "interpolation": {
+          "type": "none"
+        }
+      },
+      {
+        "id": 3,
+        "value": [
+          0,
+          0,
+          0.00646
+        ],
+        "interpolation": {
+          "type": "none"
+        }
+      }
+    ]
+  },
+  "materials": {
+    "type": "StableNeoHookean",
+    "E": 1000000.0,
+    "nu": 0.258,
+    "rho": 1000.0
+  },
+  "output": {
+    "log": {
+      "level": "info"
+    },
+    "directory": "result",
+    "paraview": {
+      "file_name": "sim.pvd",
+      "high_order_mesh": false,
+      "volume": true,
+      "surface": true,
+      "vismesh_rel_area": 1
+    },
+    "advanced": {
+      "save_time_sequence": false
+    }
+  }
 }

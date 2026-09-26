@@ -1,0 +1,24 @@
+{
+  "method": "conforming_longest_edge_bisection",
+  "source": "/home/bowen/Unified_GIPC/Assets/diff_sim/fig10_hanger/middle_cleaned_res5x.msh",
+  "original_source": "/home/bowen/DiffIPC-data-original/python_scripts/fig10_hanger/middle_cleaned.mesh",
+  "output": "/home/bowen/DiffIPC-data-original/python_scripts/fig10_hanger/middle_cleaned_res20x.msh",
+  "why_not_ftetwild": "fTetWild --la 0.02229 from original/5x surface splits to ~3.8e6 intermediate tets; aborted to avoid another freeze",
+  "resolution_factor_elements": 20.0,
+  "input_vertices": 8172,
+  "input_tets": 35843,
+  "output_vertices": 32437,
+  "output_tets": 151863,
+  "splits": 24265,
+  "output_quality": {
+    "min": 0.1288464515059571,
+    "p01": 0.21378660318065168,
+    "p05": 0.2685252866917567,
+    "median": 0.6103437667189042
+  },
+  "tet_ratio_vs_5x": 4.236894233183606,
+  "vertex_ratio_vs_5x": 3.969285364659814,
+  "tet_ratio_vs_original": 20.00039510075069,
+  "vertex_ratio_vs_original": 15.594711538461539,
+  "min_signed_volume": 2.0551853223762098e-07
+}

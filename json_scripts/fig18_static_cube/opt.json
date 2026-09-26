@@ -7,18 +7,20 @@
     "solver": {
         "nonlinear": {
             "line_search": {
-                "method": "None"
+                "method": "None",
+                "default_init_step_size": 0.02
             },
-            "solver": "ADAM",
-            "ADAM": {
-                "alpha": 0.15
-            },
+            "solver": "GradientDescent",
             "max_iterations": 20,
             "allow_out_of_iterations": true,
-            "grad_norm_tol": 1e-8,
+            "grad_norm_tol": 1e-08,
             "advanced": {
                 "apply_gradient_fd": "None"
             }
+        },
+        "max_threads": 32,
+        "advanced": {
+            "solve_in_parallel": false
         }
     },
     "states": [
@@ -32,10 +34,12 @@
             "state": 0,
             "composition": [
                 {
-                    "type": "exp"
+                    "type": "clamp",
+                    "lower": 4.0,
+                    "upper": 16.0
                 },
                 {
-                    "type": "stable-nh-v1-to-legacy"
+                    "type": "exp"
                 },
                 {
                     "type": "per-body-to-per-elem",
@@ -46,7 +50,10 @@
     ],
     "parameters": [
         {
-            "initial": [12.135348811191877, 12.98260143502911],
+            "initial": [
+                12.95686207789101,
+                12.89284021912608
+            ],
             "number": 2
         }
     ],
@@ -60,7 +67,7 @@
                 "type": "node-target",
                 "state": 0,
                 "target_data_path": "data.txt",
-                "weight": 5e4
+                "weight": 50000.0
             }
         }
     ]

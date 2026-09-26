@@ -3,24 +3,49 @@
         {
             "type": "initial",
             "state": 0,
-            "composition": [{
-                "type": "append-values",
-                "values": [0, 1.5, 0]
-            },{
-                "type": "per-body-to-per-node",
-                "state": 0
-            },{
-                "type": "append-const",
-                "value": 0,
-                "size": 20688,
-                "start": 0
-            }]
+            "composition": [
+                {
+                    "type": "clamp",
+                    "lower": [
+                        -0.2,
+                        -2,
+                        -0.2
+                    ],
+                    "upper": [
+                        0.2,
+                        0,
+                        0.2
+                    ]
+                },
+                {
+                    "type": "append-values",
+                    "values": [
+                        0,
+                        1.5,
+                        0
+                    ]
+                },
+                {
+                    "type": "per-body-to-per-node",
+                    "state": 0
+                },
+                {
+                    "type": "append-const",
+                    "value": 0,
+                    "size": 20688,
+                    "start": 0
+                }
+            ]
         }
     ],
     "parameters": [
         {
             "number": 3,
-            "initial": [0,0,0]
+            "initial": [
+                0,
+                0,
+                0
+            ]
         }
     ],
     "output": {
@@ -29,37 +54,37 @@
         }
     },
     "solver": {
-        "max_threads": 16,
+        "max_threads": 32,
         "advanced": {
-            "solve_in_parallel": true
+            "solve_in_parallel": false
         },
         "nonlinear": {
             "line_search": {
-                "method": "Backtracking"
+                "method": "None",
+                "default_init_step_size": 1.0
             },
-            "solver": "L-BFGS-B",
-            "grad_norm_tol": 1e-5,
-            "box_constraints": {
-                "max_change": 0.5,
-                "bounds": [[-0.2,-2,-0.2], [0.2,0,0.2]]
-            },
+            "solver": [
+                {
+                    "type": "GradientDescent"
+                }
+            ],
+            "grad_norm_tol": 0.01,
             "max_iterations": 10,
-            "L-BFGS-B": {
-                "history_size": 3
-            }
+            "allow_out_of_iterations": true
         }
     },
     "functionals": [
         {
             "type": "transient_integral",
             "state": 0,
-            "weight": 20,
-            "static_objective": 
-            {
+            "weight": 200,
+            "static_objective": {
                 "type": "center-target",
                 "state": 0,
                 "target_state": 1,
-                "volume_selection": [1]
+                "volume_selection": [
+                    1
+                ]
             }
         }
     ],
@@ -70,5 +95,19 @@
         {
             "path": "state-target.json"
         }
-    ]
+    ],
+    "parameter_clip": {
+        "lower": [
+            -0.2,
+            -2,
+            -0.2
+        ],
+        "upper": [
+            0.2,
+            0,
+            0.2
+        ],
+        "max_change": 0.5,
+        "before_line_search": true
+    }
 }

@@ -11,7 +11,7 @@ import subprocess
 import time
 from pathlib import Path
 
-ROOT = Path("/home/bowen/DiffIPC-data-original")
+ROOT = Path(__file__).resolve().parents[1]
 POLYFEM_BIN = Path(os.environ.get("POLYFEM_BIN", "/home/bowen/polyfem/build/PolyFEM_bin"))
 ISAAC_PY = Path(
     os.environ.get("ISAAC_PYTHON", "/home/bowen/miniconda3/envs/env_isaaclab/bin/python")
@@ -153,12 +153,21 @@ def _summarize(history: list[float]) -> dict:
     }
 
 
+def _regenerate_fig18_target(work: Path, env: dict) -> None:
+    script = work / "generate_target.py"
+    if not script.is_file():
+        raise FileNotFoundError(f"missing {script}")
+    subprocess.run([str(ISAAC_PY), str(script)], cwd=work, env=env, check=True)
+
+
 def run_json_case(name: str) -> dict:
     work = _prepare_json_case(name)
     log_path = work / "opt.log"
     env = os.environ.copy()
     env["OMP_NUM_THREADS"] = str(THREADS)
     env["MKL_NUM_THREADS"] = str(THREADS)
+    if name == "fig18":
+        _regenerate_fig18_target(work, env)
     cmd = [
         str(POLYFEM_BIN),
         "-j",

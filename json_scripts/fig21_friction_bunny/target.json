@@ -9,8 +9,16 @@
         {
             "mesh": "stanford-bunny.obj_.msh",
             "transformation": {
-                "translation": [0.5, -0.13, -0.7],
-                "rotation": [0, 0, 0],
+                "translation": [
+                    0.5,
+                    -0.13,
+                    -0.7
+                ],
+                "rotation": [
+                    0,
+                    0,
+                    0
+                ],
                 "rotation_mode": "xyz",
                 "scale": 4
             },
@@ -21,46 +29,65 @@
     "space": {
         "discr_order": 1,
         "advanced": {
-            "quadrature_order": 5
+            "quadrature_order": 1
         }
     },
     "time": {
-        "tend": 2,
-        "dt": 0.05
+        "dt": 0.02,
+        "tend": 2
     },
     "contact": {
         "enabled": true,
         "use_convergent_formulation": true,
-        "dhat": 1e-3,
+        "dhat": 0.007671194045503013,
         "friction_coefficient": 0.1
     },
     "solver": {
         "linear": {
-            "solver": ["Eigen::PardisoLDLT", "Eigen::AccelerateLDLT", "Eigen::SimplicialLDLT"]
+            "solver": [
+                "Eigen::PardisoLDLT",
+                "Eigen::AccelerateLDLT",
+                "Eigen::SimplicialLDLT"
+            ]
         },
         "nonlinear": {
-            "solver": "Newton",
+            "line_search": {
+                "method": "Backtracking",
+                "use_grad_norm_tol": 0.0
+            },
             "norm_type": "Linf",
-            "x_delta_tol": 5e-5,
+            "x_delta_tol": 1.539099409476617e-06,
             "grad_norm_tol": 0,
             "rel_grad_norm_tol": 0,
+            "rel_x_delta_tol": 0,
+            "newton_decrement_tol": 0,
             "first_grad_norm_tol": 0,
-            "line_search": {
-                "method": "Backtracking"
+            "solver": "Newton",
+            "Newton": {
+                "force_psd_projection": true,
+                "use_psd_projection": true
             }
         },
         "advanced": {
             "scale_grad_norm_by_characteristic_length": true
         },
         "contact": {
-            "barrier_stiffness": 1e4
-        }
+            "CCD": {
+                "broad_phase": "bvh"
+            },
+            "barrier_stiffness": 10000.0
+        },
+        "max_threads": 32
     },
     "initial_conditions": {
         "velocity": [
             {
                 "id": 1,
-                "value": [0, 0, 2]
+                "value": [
+                    0,
+                    0,
+                    2
+                ]
             }
         ]
     },
@@ -83,7 +110,7 @@
     },
     "materials": {
         "type": "StableNeoHookean",
-        "E": 1e5,
+        "E": 100000.0,
         "nu": 0.48,
         "rho": 1000
     },

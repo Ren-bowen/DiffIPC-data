@@ -106,10 +106,22 @@ def _parse_polyfem_objective(log_text: str) -> float:
     raise RuntimeError("no objective value in PolyFEM log")
 
 
+def _regenerate_fig18_target(work: Path) -> None:
+    script = work / "generate_target.py"
+    if not script.is_file():
+        raise FileNotFoundError(f"missing {script}")
+    env = os.environ.copy()
+    env["OMP_NUM_THREADS"] = str(THREADS)
+    env["MKL_NUM_THREADS"] = str(THREADS)
+    subprocess.run([str(ISAAC_PY), str(script)], cwd=work, env=env, check=True)
+
+
 def run_polyfem_json(name: str, out_root: Path) -> float:
     spec = CASES[name]
     work = out_root / name
     opt_path = _prepare_opt(spec["dir"], work, spec["opt"])
+    if name == "fig18":
+        _regenerate_fig18_target(work)
     log_path = work / "init_loss.log"
     env = os.environ.copy()
     env["OMP_NUM_THREADS"] = str(THREADS)

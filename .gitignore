@@ -14,3 +14,16 @@ opt_state_*/
 __pycache__/
 *.py[cod]
 .ipynb_checkpoints/
+
+# Local benchmark run directories. Inputs and drivers remain in json_scripts/ and python_scripts/.
+/archive_latest_polyfem_*/
+/fig[0-9]*/
+/hessian_profile_*/
+/init_loss_compare_*/
+/initial_profile_*/
+/polyfem_*/
+
+# Rendered frames and fTetWild intermediates; retain their generators and input meshes.
+/json_scripts/fig1_bunnies/visualization/frames/
+/json_scripts/fig1_bunnies/visualization/*.mp4
+/python_scripts/fig10_hanger/remesh_initial_res*/ftetwild_*
